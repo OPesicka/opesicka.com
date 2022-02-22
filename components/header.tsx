@@ -1,18 +1,22 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { Text } from "../theme/theme";
 import { Title } from "./title";
 
 export const Header = () => {
   return (
     <SHeader>
-      <Title>Welcome</Title>
+      <Text variant="h1">OPESICKA</Text>
       <SDiv>
         <ul>
           <li>
-            <Link href="">Dribble</Link>
+            <Link href="">Work</Link>
           </li>
           <li>
-            <Link href="">LinkedIn</Link>
+            <Link href="">Playground</Link>
+          </li>
+          <li>
+            <Link href="">About</Link>
           </li>
         </ul>
       </SDiv>

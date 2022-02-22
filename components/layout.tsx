@@ -17,5 +17,5 @@ const SDiv = styled.main`
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
-  max-width: 800px;
+  max-width: 960px;
 `;
