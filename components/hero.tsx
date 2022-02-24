@@ -1,16 +1,26 @@
 import styled from "styled-components";
-import { shadow, text, Text } from "../theme/theme";
+import { palette } from "../theme/palette";
+import { color, text, Text } from "../theme/theme";
 
 export const Hero = () => {
   return (
     <>
       <SDiv>
-        <Text variant="text">HI THERE, </Text>
-        <Text variant="h1">I'm Ondřej Pešička</Text>
+        <Text variant="text" color="primary.500">
+          HI THERE,{" "}
+        </Text>
+        <Text variant="h1">I&apos;m Ondřej Pešička</Text>
         <Text variant="text">
-          Product designer at <strong>Apify</strong>, and Co-founder of{" "}
-          <strong>Atmos</strong> helping designers create better palettes. I
-          also ride bikes and hack Figma.
+          Product designer at{" "}
+          <Text variant="textStrong" color="primary.500" as="a" href="/">
+            Apify
+          </Text>
+          , and Co-founder of{" "}
+          <Text variant="textStrong" color="primary.500" as="a" href="/">
+            Atmos
+          </Text>{" "}
+          helping designers create better palettes. I also ride bikes and hack
+          Figma.
         </Text>
 
         <SUl>
@@ -31,6 +41,7 @@ export const Hero = () => {
 
 const SLink = styled.a`
   ${text("text")}
+  color: ${color("primary.500")}
 `;
 
 const SUl = styled.ul`
@@ -42,4 +53,5 @@ const SUl = styled.ul`
 
 const SDiv = styled.div`
   max-width: 480px;
+  //background-color: ${palette.primary[100]};
 `;

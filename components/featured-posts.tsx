@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { shadow, text, Text } from "../theme/theme";
+import { color, shadow, text, Text } from "../theme/theme";
 
 export const FeaturedPosts = () => {
   return (
@@ -10,13 +10,13 @@ export const FeaturedPosts = () => {
         </Text>
         <SGrid>
           <SBox>
-            <SText>Atmos</SText>
+            <SText variant="h3">Atmos</SText>
           </SBox>
           <SBox>
-            <SText>Alfaoptima</SText>
+            <SText variant="h3">Alfaoptima</SText>
           </SBox>
           <SBox>
-            <SText>Spaceti</SText>
+            <SText variant="h3">Spaceti</SText>
           </SBox>
         </SGrid>
       </SDiv>
@@ -26,21 +26,20 @@ export const FeaturedPosts = () => {
 
 const SBox = styled.div`
   ${shadow("l2")};
-  background: #26252c;
+  background: ${color("neutral.900")};
   border-radius: 12px;
   width: auto;
   height: 312px;
   display: flex;
   transition: 160ms;
-  border: solid 1px #312f38;
+  border: solid 1px ${color("neutral.800")};
   padding: 24px;
   :hover {
     ${shadow("l3")};
   }
 `;
 
-const SText = styled.h3`
-  ${text("h3")}
+const SText = styled(Text)`
   align-self: flex-end;
   margin: 0;
 `;

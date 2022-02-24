@@ -1,18 +1,18 @@
 import { FC, ReactNode } from "react";
 import styled, { css } from "styled-components";
+import { RecursiveKeyOf } from "../types/RecursiveKeyOf";
+import { palette } from "./palette";
 
 type Props = {
   variant: FontVariant;
   as?: string | React.ComponentType<unknown>;
   children: ReactNode;
+  color?: ColorKey;
+  href?: string;
 };
 
 export const Text = (props: Props) => {
-  return (
-    <SText variant={props.variant} as={props.as}>
-      {props.children}
-    </SText>
-  );
+  return <SText {...props}>{props.children}</SText>;
 };
 
 type FontVariant =
@@ -65,14 +65,6 @@ const fontDefinition: Record<
   },
 };
 
-const SText = styled.p<Props>`
-  margin: 8px 0px 16px 0px;
-
-  ${(props) => {
-    return text(props.variant);
-  }}
-`;
-
 export const text = (variant: FontVariant) => {
   const definition = fontDefinition[variant];
   return css`
@@ -82,7 +74,6 @@ export const text = (variant: FontVariant) => {
     font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
       "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue",
       "sans-serif";
-    color: #f2effb;
   `;
 };
 
@@ -98,4 +89,23 @@ export const shadow = (variant: Shadows) => {
   return css`
     box-shadow: ${shadowDefinition[variant]};
   `;
+};
+
+const SText = styled.p.withConfig<Props>({
+  shouldForwardProp: (p) => !["color", "variant"].includes(p),
+})`
+  margin: 8px 0px 16px 0px;
+  color: ${(props) => color(props.color ?? "neutral.0")};
+  ${(props) => {
+    return text(props.variant);
+  }}
+`;
+
+type ColorKey = RecursiveKeyOf<typeof palette>;
+
+export const color = (key: ColorKey) => {
+  return key.split(".").reduce((acc, key) => {
+    // @ts-ignore
+    return acc[key];
+  }, palette);
 };
