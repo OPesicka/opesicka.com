@@ -1,5 +1,9 @@
 import { FC, ReactNode } from "react";
-import styled, { css } from "styled-components";
+import styled, {
+  BaseThemedCssFunction,
+  css,
+  ThemedCssFunction,
+} from "styled-components";
 import { RecursiveKeyOf } from "../types/RecursiveKeyOf";
 import { palette } from "./palette";
 
@@ -26,42 +30,62 @@ type FontVariant =
 
 const fontDefinition: Record<
   FontVariant,
-  { fontSize: number; lineHeight: number; weight: number }
+  {
+    fontSize: number;
+    lineHeight: number;
+    weight: number;
+    mobileFontSize: number;
+    mobileLineHeight: number;
+  }
 > = {
   h1: {
     fontSize: 48,
     lineHeight: 64,
     weight: 700,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
   h2: {
     fontSize: 32,
     lineHeight: 40,
     weight: 700,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
   h3: {
     fontSize: 24,
     lineHeight: 36,
     weight: 700,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
   text: {
     fontSize: 20,
     lineHeight: 32,
     weight: 400,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
   textStrong: {
     fontSize: 20,
     lineHeight: 32,
     weight: 700,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
   footnote: {
     fontSize: 16,
     lineHeight: 24,
     weight: 400,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
   footnoteStrong: {
     fontSize: 16,
     lineHeight: 24,
     weight: 700,
+    mobileFontSize: 10,
+    mobileLineHeight: 10,
   },
 };
 
@@ -108,4 +132,33 @@ export const color = (key: ColorKey) => {
     // @ts-ignore
     return acc[key];
   }, palette);
+};
+
+export const breakpoint = (
+  breakpoint: keyof Breakpoints,
+  when: "up" | "down",
+  styles: ReturnType<ThemedCssFunction<Props>>
+) => {
+  const condition = `${when === "down" ? "max-width" : "min-width"}: ${
+    breakpoints[breakpoint] - (when === "down" ? 1 : 0)
+  }px`;
+  return css`
+    @media (${condition}) {
+      ${styles}
+    }
+  `;
+};
+
+type Breakpoints = {
+  mobile: number;
+  tablet: number;
+  desktop: number;
+  xl: number;
+};
+
+const breakpoints: Breakpoints = {
+  mobile: 768,
+  tablet: 990,
+  desktop: 1440,
+  xl: 2048,
 };

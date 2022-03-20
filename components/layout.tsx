@@ -6,9 +6,9 @@ import { Header } from "./header";
 export const Layout: FC = (props) => {
   return (
     <>
-      <Header></Header>
+      <Header />
       <SDiv>{props.children}</SDiv>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };

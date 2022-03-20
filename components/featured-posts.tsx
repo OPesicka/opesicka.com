@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { color, shadow, text, Text } from "../theme/theme";
+import styled, { css } from "styled-components";
+import { breakpoint, color, shadow, text, Text } from "../theme/theme";
 
 export const FeaturedPosts = () => {
   return (
@@ -42,6 +42,13 @@ const SBox = styled.div`
 const SText = styled(Text)`
   align-self: flex-end;
   margin: 0;
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      color: red;
+    `
+  )}
 `;
 
 const SGrid = styled.div`
