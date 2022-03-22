@@ -1,7 +1,8 @@
 import Image from "next/image";
-import styled from "styled-components";
-import { Text } from "../theme/theme";
+import styled, { css } from "styled-components";
+import { breakpoint, Text } from "../theme/theme";
 import { SocialLinks } from "./social-links";
+import { StyledLink } from "./styled-link";
 
 export const Hero = () => {
   return (
@@ -13,16 +14,9 @@ export const Hero = () => {
           </Text>
           <Text variant="h1">I&apos;m Ondřej Pešička</Text>
           <Text variant="text" color="neutral.200">
-            Product designer at{" "}
-            <Text variant="textStrong" color="primary.500" as="a" href="/">
-              Apify
-            </Text>
-            , and Co-founder of{" "}
-            <Text variant="textStrong" color="primary.500" as="a" href="/">
-              Atmos
-            </Text>{" "}
-            helping designers create better palettes. I also ride bikes and hack
-            Figma.
+            Product designer at <StyledLink href="/">Apify</StyledLink>, and
+            Co-founder of <StyledLink href="/">Atmos</StyledLink> helping
+            designers create better palettes. I also ride bikes and hack Figma.
           </Text>
 
           <SocialLinks />
@@ -43,7 +37,15 @@ export const Hero = () => {
             />
           </PurpleDiv>
         </SDiv>
-        <Image src="/hero.png" height="360" width="360" z-index="-1000" />
+        <SHeroImage>
+          <Image
+            src="/hero.png"
+            height="360"
+            width="360"
+            alt="illustration"
+            layout="fixed"
+          />
+        </SHeroImage>
       </SBox>
     </>
   );
@@ -58,14 +60,39 @@ const RedDiv = styled.div`
   left: 85%;
   width: 100%;
   z-index: -1000;
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      display: none;
+    `
+  )}
+`;
+
+const SHeroImage = styled.div`
+  z-index: -1000;
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      display: none;
+    `
+  )}
 `;
 
 const PurpleDiv = styled.div`
   position: absolute;
-  left: -13%;
+  left: -16%;
   top: 80px;
   width: 100%;
   z-index: -1000;
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      display: none;
+    `
+  )}
 `;
 const SBox = styled.div`
   display: flex;

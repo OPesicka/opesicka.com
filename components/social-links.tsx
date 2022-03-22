@@ -18,7 +18,7 @@ export const SocialLinks = () => {
           <SText>/</SText>
         </li>
         <li>
-          <SLink href="">Dribbble</SLink>
+          <SLink href="/">Dribbble</SLink>
         </li>
       </SUl>
     </>
@@ -29,6 +29,10 @@ const SLink = styled.a`
   ${text("footnote")};
   color: ${color("neutral.400")};
   text-decoration: none;
+  transition: all 120ms;
+  :hover {
+    color: ${color("primary.500")};
+  }
 `;
 
 const SUl = styled.ul`

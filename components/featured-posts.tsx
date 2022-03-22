@@ -26,7 +26,8 @@ export const FeaturedPosts = () => {
 
 const SBox = styled.div`
   ${shadow("l2")};
-  background: ${color("neutral.900")};
+  background-image: url(/placeholder.png);
+  background-position: center center;
   border-radius: 12px;
   width: auto;
   height: 312px;
@@ -37,18 +38,18 @@ const SBox = styled.div`
   :hover {
     ${shadow("l3")};
   }
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      height: 280px;
+    `
+  )}
 `;
 
 const SText = styled(Text)`
   align-self: flex-end;
   margin: 0;
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      color: red;
-    `
-  )}
 `;
 
 const SGrid = styled.div`
@@ -56,6 +57,14 @@ const SGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 24px;
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      grid-template-columns: 1fr;
+      gap: 32px;
+    `
+  )}
 `;
 
 const SDiv = styled.div`

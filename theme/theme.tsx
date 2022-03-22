@@ -42,50 +42,50 @@ const fontDefinition: Record<
     fontSize: 48,
     lineHeight: 64,
     weight: 700,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 40,
+    mobileLineHeight: 56,
   },
   h2: {
     fontSize: 32,
     lineHeight: 40,
     weight: 700,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 30,
+    mobileLineHeight: 36,
   },
   h3: {
     fontSize: 24,
     lineHeight: 36,
     weight: 700,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 24,
+    mobileLineHeight: 36,
   },
   text: {
     fontSize: 20,
     lineHeight: 32,
     weight: 400,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 20,
+    mobileLineHeight: 32,
   },
   textStrong: {
     fontSize: 20,
     lineHeight: 32,
     weight: 700,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 20,
+    mobileLineHeight: 32,
   },
   footnote: {
     fontSize: 16,
     lineHeight: 24,
     weight: 400,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 16,
+    mobileLineHeight: 24,
   },
   footnoteStrong: {
     fontSize: 16,
     lineHeight: 24,
     weight: 700,
-    mobileFontSize: 10,
-    mobileLineHeight: 10,
+    mobileFontSize: 16,
+    mobileLineHeight: 24,
   },
 };
 
@@ -98,6 +98,14 @@ export const text = (variant: FontVariant) => {
     font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
       "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue",
       "sans-serif";
+    ${breakpoint(
+      "mobile",
+      "down",
+      css`
+        font-size: ${definition.mobileFontSize}px;
+        line-height: ${definition.mobileLineHeight}px;
+      `
+    )}
   `;
 };
 

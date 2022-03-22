@@ -22,8 +22,6 @@ export const Footer = () => {
 };
 
 const SDiv = styled.div`
-  max-width: 960px;
-  margin: auto;
   margin-top: 160px;
 `;
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import { color, text, Text } from "../theme/theme";
 
@@ -23,10 +22,9 @@ export const Header = () => {
 
 const SHeader = styled.header`
   display: flex;
-  padding: 24px;
+  padding: 24px 0;
   align-items: center;
   justify-content: space-between;
-  max-width: 960px;
   margin: auto;
 `;
 
@@ -39,6 +37,10 @@ const SLink = styled.a`
   ${text("footnoteStrong")};
   color: ${color("neutral.400")};
   text-decoration: none;
+  transition: all 120ms;
+  :hover {
+    color: ${color("primary.500")};
+  }
 `;
 
 const Logo = styled.p`
