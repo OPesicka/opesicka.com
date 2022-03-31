@@ -38,3 +38,5 @@ const SEmail = styled.p`
   margin: 0;
   color: ${color("neutral.50")};
 `;
+
+// TODO: make bottom social links responsive

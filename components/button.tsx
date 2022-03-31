@@ -1,22 +1,39 @@
-import { FC } from "react";
+import Link from "next/link";
+import { FC, ReactNode } from "react";
 import styled from "styled-components";
+import { color, text } from "../theme/theme";
 
-export const Button: FC = (props) => {
-  return <SButton>{props.children}</SButton>;
+type Props = {
+  href: string;
+  children: ReactNode;
+  rel?: string;
 };
 
-const SButton = styled.button`
-  background: blueviolet;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
+export const Button = (props: Props) => {
+  return (
+    <SLink href={props.href} rel={props.rel}>
+      <SButton>{props.children}</SButton>
+    </SLink>
+  );
+};
+
+const SButton = styled.div`
+  background: ${color("primary.600")};
+  padding: 8px 16px;
+  border-radius: 8px;
   border: none;
-  transition: ease-in 80ms;
+  transition: 160ms;
   cursor: pointer;
+  width: auto;
 
   :hover {
-    opacity: 60%;
+    background: ${color("primary.500")};
   }
+`;
+
+const SLink = styled.a`
+  ${text("footnoteStrong")}
+  color: ${color("neutral.0")};
+  text-decoration: none;
+  margin-top: 24px;
 `;

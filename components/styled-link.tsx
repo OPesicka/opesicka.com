@@ -18,7 +18,7 @@ const SLink = styled.a<Props>`
   ${text("textStrong")};
   color: ${color("neutral.50")};
   text-decoration: none;
-  transition: all 120ms;
+  transition: all 160ms;
   :hover {
     color: ${color("primary.500")};
     color: ${(props) =>

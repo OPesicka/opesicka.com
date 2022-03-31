@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 import { breakpoint, color, shadow, Text } from "../theme/theme";
+import { Button } from "./button";
 
 export const FeaturedPosts = () => {
   return (
@@ -11,25 +12,41 @@ export const FeaturedPosts = () => {
         </Text>
         <SGrid>
           <Post>
-            <Icon />
+            <Icon>
+              <Image src="/apify.svg" width="56px" height="56px" />
+            </Icon>
             <Text variant="h3">Apify</Text>
             <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
-              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+              Lorem ipsum dolor sit amet, con sectetur adipiscing elit.
             </Text>
+            <Button href="https://apify.com/">Visit</Button>
           </Post>
           <Post>
-            <Icon />
+            <Icon>
+              <Image src="/alfaoptima.svg" width="56px" height="56px" />
+            </Icon>
             <Text variant="h3">Alfaoptima</Text>
             <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
               Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
             </Text>
+            <Button
+              href="https://www.behance.net/gallery/107464717/Alfaoptima-Case-study"
+              rel="nofollow noopener"
+            >
+              Behance project
+            </Button>
           </Post>
           <Post>
-            <Icon />
+            <Icon>
+              <Image src="/spaceti.svg" width="56px" height="56px" />
+            </Icon>
             <Text variant="h3">Spaceti</Text>
             <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
-              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+              Lorem ipsum dolor sit amet, con sectetur adipiscing elit.
             </Text>
+            <Button href="https://www.spaceti.com/" rel="nofollow noopener">
+              Visit
+            </Button>
           </Post>
         </SGrid>
       </SDiv>
@@ -42,21 +59,20 @@ const Post = styled.div`
   border-radius: 12px;
   width: auto;
   transition: 160ms;
-  background-color: ${color("neutral.900")};
+  background: ${color("neutral.900")};
   border: 1px solid ${color("neutral.850")};
   padding: 32px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   :hover {
     ${shadow("l3")};
+    border-color: ${color("neutral.800")};
   }
 `;
 
 const Icon = styled.div`
-  width: 80px;
-  height: 80px;
   margin-bottom: 40px;
-  border-radius: 100%;
-  background-color: ${color("primary.400")};
 `;
 
 const SGrid = styled.div`

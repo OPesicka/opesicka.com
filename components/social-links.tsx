@@ -10,7 +10,11 @@ export const SocialLinks = (props: Props) => {
     <>
       <SUl>
         <li>
-          <SLink variant={props.variant} href="">
+          <SLink
+            variant={props.variant}
+            href="https://www.linkedin.com/in/opesicka/"
+            rel="nofollow noopener"
+          >
             Linkedin
           </SLink>
         </li>
@@ -18,7 +22,11 @@ export const SocialLinks = (props: Props) => {
           <SText variant={props.variant}>/</SText>
         </li>
         <li>
-          <SLink variant={props.variant} href="">
+          <SLink
+            variant={props.variant}
+            href="https://www.behance.net/OPesicka"
+            rel="nofollow noopener"
+          >
             Behance
           </SLink>
         </li>
@@ -26,7 +34,11 @@ export const SocialLinks = (props: Props) => {
           <SText variant={props.variant}>/</SText>
         </li>
         <li>
-          <SLink variant={props.variant} href="/">
+          <SLink
+            variant={props.variant}
+            href="https://dribbble.com/OPesicka"
+            rel="nofollow noopener"
+          >
             Dribbble
           </SLink>
         </li>
@@ -40,7 +52,7 @@ const SLink = styled.a<Props>`
   color: ${(props) =>
     color(props.variant === "white" ? "neutral.0" : "neutral.400")};
   text-decoration: none;
-  transition: all 120ms;
+  transition: all 160ms;
   :hover {
     color: ${(props) =>
       color(props.variant === "white" ? "neutral.200" : "primary.500")};
