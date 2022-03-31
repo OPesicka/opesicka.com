@@ -1,10 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { CardStack } from "../components/cards";
 import { FeaturedPosts } from "../components/featured-posts";
 import { Hero } from "../components/hero";
 import { Layout } from "../components/layout";
-import { Title } from "../components/title";
 
 const Home: NextPage = () => {
   return (

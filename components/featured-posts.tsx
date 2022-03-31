@@ -1,5 +1,6 @@
+import Image from "next/image";
 import styled, { css } from "styled-components";
-import { breakpoint, color, shadow, text, Text } from "../theme/theme";
+import { breakpoint, color, shadow, Text } from "../theme/theme";
 
 export const FeaturedPosts = () => {
   return (
@@ -9,47 +10,53 @@ export const FeaturedPosts = () => {
           Featured work
         </Text>
         <SGrid>
-          <SBox>
-            <SText variant="h3">Atmos</SText>
-          </SBox>
-          <SBox>
-            <SText variant="h3">Alfaoptima</SText>
-          </SBox>
-          <SBox>
-            <SText variant="h3">Spaceti</SText>
-          </SBox>
+          <Post>
+            <Icon />
+            <Text variant="h3">Apify</Text>
+            <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
+              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            </Text>
+          </Post>
+          <Post>
+            <Icon />
+            <Text variant="h3">Alfaoptima</Text>
+            <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
+              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            </Text>
+          </Post>
+          <Post>
+            <Icon />
+            <Text variant="h3">Spaceti</Text>
+            <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
+              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            </Text>
+          </Post>
         </SGrid>
       </SDiv>
     </>
   );
 };
 
-const SBox = styled.div`
+const Post = styled.div`
   ${shadow("l2")};
-  background-image: url(/placeholder.png);
-  background-position: center center;
   border-radius: 12px;
   width: auto;
-  height: 312px;
-  display: flex;
   transition: 160ms;
-  border: solid 1px ${color("neutral.800")};
-  padding: 24px;
+  background-color: ${color("neutral.900")};
+  border: 1px solid ${color("neutral.850")};
+  padding: 32px;
+
   :hover {
     ${shadow("l3")};
   }
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      height: 280px;
-    `
-  )}
 `;
 
-const SText = styled(Text)`
-  align-self: flex-end;
-  margin: 0;
+const Icon = styled.div`
+  width: 80px;
+  height: 80px;
+  margin-bottom: 40px;
+  border-radius: 100%;
+  background-color: ${color("primary.400")};
 `;
 
 const SGrid = styled.div`
@@ -69,4 +76,9 @@ const SGrid = styled.div`
 
 const SDiv = styled.div`
   margin-top: 140px;
+`;
+
+const CoverImage = styled(Image)`
+  border-radius: 12px;
+  border: solid 1px ${color("neutral.800")} !important;
 `;

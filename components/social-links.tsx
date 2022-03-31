@@ -1,37 +1,49 @@
 import styled from "styled-components";
 import { color, text, Text } from "../theme/theme";
 
-export const SocialLinks = () => {
+type Props = {
+  variant?: "white";
+};
+
+export const SocialLinks = (props: Props) => {
   return (
     <>
       <SUl>
         <li>
-          <SLink href="">Linkedin</SLink>
+          <SLink variant={props.variant} href="">
+            Linkedin
+          </SLink>
         </li>
         <li>
-          <SText>/</SText>
+          <SText variant={props.variant}>/</SText>
         </li>
         <li>
-          <SLink href="">Behance</SLink>
+          <SLink variant={props.variant} href="">
+            Behance
+          </SLink>
         </li>
         <li>
-          <SText>/</SText>
+          <SText variant={props.variant}>/</SText>
         </li>
         <li>
-          <SLink href="/">Dribbble</SLink>
+          <SLink variant={props.variant} href="/">
+            Dribbble
+          </SLink>
         </li>
       </SUl>
     </>
   );
 };
 
-const SLink = styled.a`
+const SLink = styled.a<Props>`
   ${text("footnote")};
-  color: ${color("neutral.400")};
+  color: ${(props) =>
+    color(props.variant === "white" ? "neutral.0" : "neutral.400")};
   text-decoration: none;
   transition: all 120ms;
   :hover {
-    color: ${color("primary.500")};
+    color: ${(props) =>
+      color(props.variant === "white" ? "neutral.200" : "primary.500")};
   }
 `;
 
@@ -42,8 +54,9 @@ const SUl = styled.ul`
   padding: 0;
 `;
 
-const SText = styled.p`
+const SText = styled.p<Props>`
   ${text("footnote")};
-  color: ${color("primary.500")};
+  color: ${(props) =>
+    color(props.variant === "white" ? "neutral.300" : "primary.500")};
   margin: 0;
 `;

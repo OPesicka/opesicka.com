@@ -6,6 +6,7 @@ import styled, {
 } from "styled-components";
 import { RecursiveKeyOf } from "../types/RecursiveKeyOf";
 import { palette } from "./palette";
+import { margin, MarginOptions, padding, PaddingOptions } from "./utils";
 
 type Props = {
   variant: FontVariant;
@@ -13,6 +14,8 @@ type Props = {
   children: ReactNode;
   color?: ColorKey;
   href?: string;
+  m?: MarginOptions;
+  p?: PaddingOptions;
 };
 
 export const Text = (props: Props) => {
@@ -26,7 +29,8 @@ type FontVariant =
   | "text"
   | "textStrong"
   | "footnote"
-  | "footnoteStrong";
+  | "footnoteStrong"
+  | "display";
 
 const fontDefinition: Record<
   FontVariant,
@@ -87,6 +91,13 @@ const fontDefinition: Record<
     mobileFontSize: 16,
     mobileLineHeight: 24,
   },
+  display: {
+    fontSize: 72,
+    lineHeight: 88,
+    weight: 800,
+    mobileFontSize: 48,
+    mobileLineHeight: 64,
+  },
 };
 
 export const text = (variant: FontVariant) => {
@@ -124,9 +135,12 @@ export const shadow = (variant: Shadows) => {
 };
 
 const SText = styled.p.withConfig<Props>({
-  shouldForwardProp: (p) => !["color", "variant"].includes(p),
+  shouldForwardProp: (propName) =>
+    !["color", "variant", "m", "p"].includes(propName),
 })`
-  margin: 8px 0px 16px 0px;
+  margin: 0;
+  ${(props) => margin(props.m)};
+  ${(props) => padding(props.p)};
   color: ${(props) => color(props.color ?? "neutral.0")};
   ${(props) => {
     return text(props.variant);
