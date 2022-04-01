@@ -1,27 +1,26 @@
-import styled from "styled-components";
-import { color, text, Text } from "../theme/theme";
+import styled, { css } from "styled-components";
+import { breakpoint, color, text, Text } from "../theme/theme";
 import { SocialLinks } from "./social-links";
-import { Title } from "./title";
 
 export const Footer = () => {
   return (
-    <>
-      <SDiv>
-        <Text variant="h2">Want to get in touch?</Text>
-        <Text variant="text" color="neutral.400">
-          I’m always open to new adventures and interesting projects.
-        </Text>
-        <SBox>
-          <SEmail>hello@opesicka.com</SEmail>
+    <Container>
+      <Text variant="h2" as="h2">
+        Want to get in touch?
+      </Text>
+      <Text variant="text" color="neutral.400">
+        I’m always open to new adventures and interesting projects.
+      </Text>
+      <SBox>
+        <SEmail>hello@opesicka.com</SEmail>
 
-          <SocialLinks />
-        </SBox>
-      </SDiv>
-    </>
+        <SocialLinks />
+      </SBox>
+    </Container>
   );
 };
 
-const SDiv = styled.div`
+const Container = styled.div`
   margin-top: 160px;
 `;
 
@@ -31,6 +30,15 @@ const SBox = styled.div`
   justify-content: space-between;
   margin-top: 64px;
   margin-bottom: 80px;
+  ${breakpoint(
+    "mobile",
+    "down",
+    css`
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1žpx;
+    `
+  )}
 `;
 
 const SEmail = styled.p`
@@ -38,5 +46,3 @@ const SEmail = styled.p`
   margin: 0;
   color: ${color("neutral.50")};
 `;
-
-// TODO: make bottom social links responsive

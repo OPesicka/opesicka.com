@@ -12,8 +12,6 @@ export const StyledLink = (props: Props) => {
   return <SLink {...props}>{props.children}</SLink>;
 };
 
-//TODO rewrite this according to use const SLink = styled(Text)
-
 const SLink = styled.a<Props>`
   ${text("textStrong")};
   color: ${color("neutral.50")};

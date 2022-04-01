@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, text, Text } from "../theme/theme";
+import { color, text } from "../theme/theme";
 
 type Props = {
   variant?: "white";

@@ -9,14 +9,14 @@ export const Layout: FC = (props) => {
     <>
       <SLayout>
         <Header />
-        <SDiv>{props.children}</SDiv>
+        <Container>{props.children}</Container>
         <Footer />
       </SLayout>
     </>
   );
 };
 
-const SDiv = styled.main`
+const Container = styled.main`
   margin-top: 40px;
   margin-bottom: 40px;
 `;

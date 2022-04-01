@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { color, text, Text } from "../theme/theme";
+import { color, text } from "../theme/theme";
 
 export const Header = () => {
   return (
@@ -36,6 +36,7 @@ const SHeader = styled.header`
 const SUl = styled.ul`
   display: flex;
   gap: 24px;
+  list-style-type: none;
 `;
 
 const SLink = styled.a`

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 import { color, text } from "../theme/theme";
 

@@ -1,56 +1,39 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
+import { featured } from "../res/content";
 import { breakpoint, color, shadow, Text } from "../theme/theme";
 import { Button } from "./button";
 
 export const FeaturedPosts = () => {
   return (
-    <>
-      <SDiv>
-        <Text variant="h2" as="h2">
-          Featured work
-        </Text>
-        <SGrid>
-          <Post>
+    <Conatiner>
+      <Text variant="h2" as="h2">
+        Featured work
+      </Text>
+      <SGrid>
+        {featured.map((item) => (
+          <Post key={item.name}>
             <Icon>
-              <Image src="/apify.svg" width="56px" height="56px" />
+              <Image
+                src={item.icon}
+                width="56px"
+                height="56px"
+                alt={item.alt}
+              />
             </Icon>
-            <Text variant="h3">Apify</Text>
-            <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
-              Lorem ipsum dolor sit amet, con sectetur adipiscing elit.
+            <Text variant="h3" as="h3">
+              {item.name}
             </Text>
-            <Button href="https://apify.com/">Visit</Button>
-          </Post>
-          <Post>
-            <Icon>
-              <Image src="/alfaoptima.svg" width="56px" height="56px" />
-            </Icon>
-            <Text variant="h3">Alfaoptima</Text>
             <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
-              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+              {item.description}
             </Text>
-            <Button
-              href="https://www.behance.net/gallery/107464717/Alfaoptima-Case-study"
-              rel="nofollow noopener"
-            >
-              Behance project
+            <Button href={item.link} rel={item.rel}>
+              {item.button}
             </Button>
           </Post>
-          <Post>
-            <Icon>
-              <Image src="/spaceti.svg" width="56px" height="56px" />
-            </Icon>
-            <Text variant="h3">Spaceti</Text>
-            <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
-              Lorem ipsum dolor sit amet, con sectetur adipiscing elit.
-            </Text>
-            <Button href="https://www.spaceti.com/" rel="nofollow noopener">
-              Visit
-            </Button>
-          </Post>
-        </SGrid>
-      </SDiv>
-    </>
+        ))}
+      </SGrid>
+    </Conatiner>
   );
 };
 
@@ -59,16 +42,17 @@ const Post = styled.div`
   border-radius: 12px;
   width: auto;
   transition: 160ms;
-  background: ${color("neutral.900")};
-  border: 1px solid ${color("neutral.850")};
+  // background: ${color("neutral.900")};
+  border: 1px solid ${color("neutral.800")};
   padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  :hover {
-    ${shadow("l3")};
-    border-color: ${color("neutral.800")};
-  }
+  background: linear-gradient(
+    163.1deg,
+    ${color("neutral.850")} -74.91%,
+    ${color("neutral.900")} 92.81%
+  );
 `;
 
 const Icon = styled.div`
@@ -90,7 +74,7 @@ const SGrid = styled.div`
   )}
 `;
 
-const SDiv = styled.div`
+const Conatiner = styled.div`
   margin-top: 140px;
 `;
 

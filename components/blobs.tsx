@@ -48,13 +48,13 @@ const RedBlob = styled.div`
       transform: rotate(0deg);
     }
 
-    50% {
+    55% {
       left: 6%;
       top: 20%;
       transform: rotate(-10deg);
     }
 
-    75% {
+    70% {
       left: 2%;
       top: 10%;
       transform: rotate(-5deg);
@@ -77,7 +77,7 @@ const OrangeBlog = styled.div`
   opacity: 0.6;
 
   animation-name: orange;
-  animation-duration: 10s;
+  animation-duration: 16s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.47, 0.36, 0.73, 0.64);
 
@@ -88,7 +88,7 @@ const OrangeBlog = styled.div`
       transform: rotate(0deg);
     }
 
-    35% {
+    45% {
       left: 40%;
       top: 5%;
       transform: rotate(0deg);
@@ -117,7 +117,7 @@ const PurpleBlob = styled.div`
   opacity: 0.5;
 
   animation-name: purple;
-  animation-duration: 18s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.47, 0.36, 0.73, 0.64);
 
@@ -159,7 +159,7 @@ const BlueBlob = styled.div`
 
   position: absolute;
   animation-name: blue;
-  animation-duration: 8s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.47, 0.36, 0.73, 0.64);
 
@@ -176,7 +176,7 @@ const BlueBlob = styled.div`
       transform: rotate(0deg);
     }
 
-    75% {
+    80% {
       left: 60%;
       top: 40%;
       transform: rotate(0deg);
