@@ -29,7 +29,7 @@ const SLayout = styled.div`
     "mobile",
     "down",
     css`
-      padding: 0 40px;
+      padding: 0 32px;
     `
   )}
 `;

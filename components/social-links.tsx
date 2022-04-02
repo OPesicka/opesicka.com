@@ -50,7 +50,7 @@ export const SocialLinks = (props: Props) => {
 const SLink = styled.a<Props>`
   ${text("footnote")};
   color: ${(props) =>
-    color(props.variant === "white" ? "neutral.0" : "neutral.400")};
+    color(props.variant === "white" ? "neutral.50" : "neutral.400")};
   text-decoration: none;
   transition: all 160ms;
   :hover {

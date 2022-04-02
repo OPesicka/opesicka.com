@@ -149,7 +149,7 @@ const SText = styled.p.withConfig<Props>({
   margin: 0;
   ${(props) => margin(props.m)};
   ${(props) => padding(props.p)};
-  color: ${(props) => color(props.color ?? "neutral.0")};
+  color: ${(props) => color(props.color ?? "neutral.50")};
   ${(props) => {
     return text(props.variant);
   }}

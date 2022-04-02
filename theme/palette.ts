@@ -56,4 +56,7 @@ export const palette = {
     50: "#f2effb",
     0: "#fff",
   },
+  inherit: {
+    0: "inherit",
+  },
 };

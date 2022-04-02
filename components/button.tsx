@@ -6,11 +6,12 @@ type Props = {
   href: string;
   children: ReactNode;
   rel?: string;
+  target?: string;
 };
 
 export const Button = (props: Props) => {
   return (
-    <SLink href={props.href} rel={props.rel}>
+    <SLink href={props.href} rel={props.rel} target={props.target}>
       <SButton>{props.children}</SButton>
     </SLink>
   );
@@ -32,7 +33,7 @@ const SButton = styled.div`
 
 const SLink = styled.a`
   ${text("footnoteStrong")}
-  color: ${color("neutral.0")};
+  color: ${color("neutral.50")};
   text-decoration: none;
   margin-top: 24px;
 `;

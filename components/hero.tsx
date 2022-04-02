@@ -19,7 +19,7 @@ export const Hero = () => {
           <StyledLink variant="white" href="/">
             Apify
           </StyledLink>
-          , and Co-founder of{" "}
+          , and Co&#8209;founder of{" "}
           <StyledLink variant="white" href="/">
             Atmos
           </StyledLink>{" "}
@@ -38,24 +38,18 @@ export const Hero = () => {
 const ContentContainer = styled.div`
   max-width: 640px;
   margin: auto;
-  margin-bottom: 80px;
   margin-top: 80px;
+  margin-bottom: 80px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const RedDiv = styled.div`
-  position: absolute;
-  left: 85%;
-  width: 100%;
-  z-index: -1000;
   ${breakpoint(
     "mobile",
     "down",
     css`
-      display: none;
+      margin-top: 40px;
+      margin-bottom: 0px;
     `
   )}
 `;
@@ -64,30 +58,18 @@ const Animation = styled.div`
   z-index: -1000;
   position: absolute;
   left: calc(50vw - 480px);
+  width: 100%;
+  max-width: 960px;
   ${breakpoint(
     "mobile",
     "down",
     css`
-      width: 100%;
-      left: calc(50vw - 240px);
+      left: calc(50vw - 160px);
+      max-width: 320px;
     `
   )}
 `;
 
-const PurpleDiv = styled.div`
-  position: absolute;
-  left: -16%;
-  top: 80px;
-  width: 100%;
-  z-index: -1000;
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      display: none;
-    `
-  )}
-`;
 const Container = styled.div`
   display: flex;
   gap: 120px;

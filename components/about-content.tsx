@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
-import { about, education, jobs, projects } from "../res/content";
+import { about, aboutData } from "../res/content";
 import { breakpoint, color, shadow, Text } from "../theme/theme";
 
 export const AboutContent = () => {
@@ -11,67 +11,63 @@ export const AboutContent = () => {
       </Text>
 
       <Text variant="text">{about}</Text>
-      <Section>
-        <Text variant="h3" color="primary.400" as="h2" p={{ all: 24 }}>
-          Experience
-        </Text>
-        {jobs.map((item) => (
-          <Item key={item.company}>
-            <MainContainer>
-              <Image src={item.icon} width="36px" height="36px" />
-              <TextContainer>
-                <Text variant="h4" as="h3">
-                  {item.company}
-                </Text>
-                <Text variant="footnote">{item.position}</Text>
-              </TextContainer>
-            </MainContainer>
-            <DateContainer>
-              <Text variant="footnote" color="neutral.400">
-                {item.date}
-              </Text>
-            </DateContainer>
-          </Item>
-        ))}
-      </Section>
-      <Section>
-        <Text variant="h3" color="success.400" as="h2" p={{ all: 24 }}>
-          Projects
-        </Text>
-        {projects.map((item) => (
-          <Item key={item.name}>
-            <TextContainer>
-              <Text variant="h4" as="h3">
-                {item.name}
-              </Text>
-              <Text variant="footnote">{item.type}</Text>
-            </TextContainer>
-            <Text variant="footnote" color="neutral.400">
-              {item.date}
-            </Text>
-          </Item>
-        ))}
-      </Section>
-      <Section>
-        <Text variant="h3" color="danger.400" as="h2" p={{ all: 24 }}>
-          Education
-        </Text>
-        {education.map((item) => (
-          <Item key={item.name}>
-            <TextContainer>
-              <Text variant="h4" as="h3">
-                {item.name}
-              </Text>
-              <Text variant="footnote">{item.description}</Text>
-            </TextContainer>
-            <Text variant="footnote" color="neutral.400">
-              {item.date}
-            </Text>
-          </Item>
-        ))}
-      </Section>
+
+      {aboutData.map((item, key) => (
+        <Section key={item.type}>
+          {/* @ts-ignore */}
+          <Text variant="h3" color={item.color} as="h2" p={{ all: 24 }}>
+            {item.type}
+          </Text>
+          {aboutData[key].data.map((item: any) => (
+            <Item
+              href={item.link}
+              target="_blank"
+              key={item.name}
+              data-var={item.color}
+              rel="nofollow noopener"
+            >
+              <MainContainer>
+                {GetIcon(item.icon)}
+                <TextContainer>
+                  <Text variant="h4" as="h3" color="inherit.0">
+                    {item.name}
+                  </Text>
+                  <Text variant="footnote">{item.description}</Text>
+                </TextContainer>
+              </MainContainer>
+              {GetSpacing(item.icon, item.date)}
+            </Item>
+          ))}
+        </Section>
+      ))}
     </Container>
   );
+};
+
+const GetIcon = (p: any) => {
+  if (p !== null) {
+    return <Image src={p} width="36px" height="36px" alt="logo" />;
+  } else {
+    return;
+  }
+};
+
+const GetSpacing = (p: any, date: string) => {
+  if (p !== null) {
+    return (
+      <DateContainer>
+        <Text variant="footnote" color="neutral.400">
+          {date}
+        </Text>
+      </DateContainer>
+    );
+  } else {
+    return (
+      <Text variant="footnote" color="neutral.400">
+        {date}
+      </Text>
+    );
+  }
 };
 
 const Container = styled.div`
@@ -98,7 +94,7 @@ const Section = styled.div`
     `
   )}
 `;
-const Item = styled.div`
+const Item = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -106,9 +102,23 @@ const Item = styled.div`
   padding: 24px;
   border-top: 1px solid ${color("neutral.800")};
   border-bottom: none;
-  :hover {
+  color: ${color("neutral.50")};
+  text-decoration: none;
+  transition: 120ms;
+  &[data-var="primary"]:hover {
     background-color: ${color("neutral.850")};
-    color: red;
+    cursor: pointer;
+    color: ${color("primary.400")};
+  }
+  &[data-var="success"]:hover {
+    color: ${color("success.400")};
+    background-color: ${color("neutral.850")};
+    cursor: pointer;
+  }
+  &[data-var="danger"]:hover {
+    color: ${color("danger.400")};
+    background-color: ${color("neutral.850")};
+    cursor: pointer;
   }
   ${breakpoint(
     "mobile",
@@ -132,7 +142,7 @@ const DateContainer = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 480px;
+  max-width: 400px;
 `;
 const MainContainer = styled.div`
   display: flex;

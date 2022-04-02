@@ -24,10 +24,10 @@ export const FeaturedPosts = () => {
             <Text variant="h3" as="h3">
               {item.name}
             </Text>
-            <Text variant="footnote" m={{ t: 8 }} color="neutral.200">
+            <Text variant="footnote" m={{ t: 8 }} color="neutral.300">
               {item.description}
             </Text>
-            <Button href={item.link} rel={item.rel}>
+            <Button href={item.link} rel={item.rel} target="_blank">
               {item.button}
             </Button>
           </Post>
@@ -76,9 +76,4 @@ const SGrid = styled.div`
 
 const Conatiner = styled.div`
   margin-top: 140px;
-`;
-
-const CoverImage = styled(Image)`
-  border-radius: 12px;
-  border: solid 1px ${color("neutral.800")} !important;
 `;

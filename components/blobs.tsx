@@ -14,16 +14,18 @@ export const Blobs = () => {
 
 const Container = styled.div`
   filter: saturate(1.2) blur(50px);
-  width: 960px;
+  width: 100%;
   height: 440px;
   //border: 1px solid white;
   position: relative;
+  overflow: hidden;
   ${breakpoint(
     "mobile",
     "down",
     css`
-      width: 480px;
+      width: 320px;
       height: 320px;
+      filter: saturate(1.2) blur(30px);
     `
   )}
 `;
@@ -74,7 +76,7 @@ const OrangeBlog = styled.div`
   width: 35%;
   border-radius: 100%;
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.5;
 
   animation-name: orange;
   animation-duration: 16s;
