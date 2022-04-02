@@ -29,9 +29,12 @@ export const AboutContent = () => {
               <MainContainer>
                 {GetIcon(item.icon)}
                 <TextContainer>
-                  <Text variant="h4" as="h3" color="inherit.0">
-                    {item.name}
-                  </Text>
+                  <HeadingContainer>
+                    <Text variant="h4" as="h3" color="inherit.0">
+                      {item.name}
+                    </Text>
+                    {GetArrow(item.link)}
+                  </HeadingContainer>
                   <Text variant="footnote">{item.description}</Text>
                 </TextContainer>
               </MainContainer>
@@ -42,6 +45,16 @@ export const AboutContent = () => {
       ))}
     </Container>
   );
+};
+
+const GetArrow = (p: any) => {
+  if (p !== null) {
+    return (
+      <Image src="/arrow.svg" width="16px" height="16px" alt="arrow right" />
+    );
+  } else {
+    return;
+  }
 };
 
 const GetIcon = (p: any) => {
@@ -69,7 +82,10 @@ const GetSpacing = (p: any, date: string) => {
     );
   }
 };
-
+const HeadingContainer = styled.div`
+  display: flex;
+  gap: 8px;
+`;
 const Container = styled.div`
   max-width: 640px;
   margin: auto;

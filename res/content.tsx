@@ -29,13 +29,21 @@ export const featured = [
 ];
 
 export const about =
-  "I’m Ondřej Pešička a multidisciplinary digital designer based in Prague, Czech Republic experienced in UI design, user experience and creating design systems. I’m passionate about designing experiences that leave a positive impact on people.";
+  "I’m Ondřej Pešička a multidisciplinary digital designer based in Prague,  Czechia experienced in UI design, user experience and creating design systems. I’m passionate about designing experiences that leave a positive impact on people.";
 
 export const aboutData = [
   {
     type: "Experience",
     color: "primary.400",
     data: [
+      {
+        name: "Atmos",
+        description: "Co-founder",
+        date: "Mar 2021 - Current",
+        icon: "/atmos.svg",
+        link: "https://atmos.style/",
+        color: "primary",
+      },
       {
         name: "Apify",
         description: "Product designer",

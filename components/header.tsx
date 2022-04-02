@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { color, text } from "../theme/theme";
@@ -5,9 +6,12 @@ import { color, text } from "../theme/theme";
 export const Header = () => {
   return (
     <SHeader>
-      <Link href="/" passHref>
+      <LogoContainer href="/">
+        <Avatar>
+          <Image src="/profile.png" width="40px" height="40px" alt="logo" />
+        </Avatar>
         <Logo>OPESICKA</Logo>
-      </Link>
+      </LogoContainer>
       <SUl>
         {/* <li>
           <SLink href="">Work</SLink>
@@ -24,6 +28,24 @@ export const Header = () => {
     </SHeader>
   );
 };
+
+const Avatar = styled.div`
+  height: "40px";
+  width: "40px";
+  border-radius: 100%;
+  overflow: hidden;
+`;
+
+const LogoContainer = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: ${color("neutral.50")};
+  :hover {
+    color: ${color("primary.500")};
+  }
+`;
 
 const SHeader = styled.header`
   display: flex;
@@ -50,12 +72,9 @@ const SLink = styled.a`
 `;
 
 const Logo = styled.p`
-  color: ${color("neutral.50")};
+  color: ${color("inherit.0")};
   ${text("h3")};
   letter-spacing: 12px;
   cursor: pointer;
   transition: all 160ms;
-  :hover {
-    color: ${color("primary.500")};
-  }
 `;

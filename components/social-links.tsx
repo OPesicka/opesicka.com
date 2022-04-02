@@ -24,10 +24,10 @@ export const SocialLinks = (props: Props) => {
         <li>
           <SLink
             variant={props.variant}
-            href="https://www.behance.net/OPesicka"
+            href="https://dribbble.com/OPesicka"
             rel="nofollow noopener"
           >
-            Behance
+            Dribbble
           </SLink>
         </li>
         <li>
@@ -36,10 +36,10 @@ export const SocialLinks = (props: Props) => {
         <li>
           <SLink
             variant={props.variant}
-            href="https://dribbble.com/OPesicka"
+            href="https://www.behance.net/OPesicka"
             rel="nofollow noopener"
           >
-            Dribbble
+            Behance
           </SLink>
         </li>
       </SUl>
@@ -69,6 +69,6 @@ const SUl = styled.ul`
 const SText = styled.p<Props>`
   ${text("footnote")};
   color: ${(props) =>
-    color(props.variant === "white" ? "neutral.300" : "primary.500")};
+    color(props.variant === "white" ? "neutral.300" : "primary.400")};
   margin: 0;
 `;
