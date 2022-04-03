@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           url: "https://opesicka.com/",
           description:
             "Ondřej Pešička is a professional product designer based in Prague, Czechia",
-          images: [{ url: "https://opesicka.com/public/og.png" }],
+          images: [{ url: "https://opesicka.com/og.png" }],
         }}
         twitter={{ cardType: "summary_large_image", handle: "@opesicka" }}
         additionalMetaTags={[
