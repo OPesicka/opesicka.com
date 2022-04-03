@@ -1,19 +1,14 @@
 import { NextPage } from "next";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { AboutContent } from "../components/about-content";
 import { Layout } from "../components/layout";
 
 const About: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>About | Ondřej Pešička</title>
-        <meta
-          name="description"
-          content="Ondřej Pešička is a professional product designer based in Prague, Czechia"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo title="About | Ondřej Pešička" />
+      <link rel="icon" href="/favicon.ico" />
+
       <Layout>
         <AboutContent />
       </Layout>

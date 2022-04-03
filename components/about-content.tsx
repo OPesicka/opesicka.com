@@ -1,7 +1,7 @@
-import Image from "next/image";
-import styled, { css } from "styled-components";
-import { about, aboutData } from "../res/content";
-import { breakpoint, color, shadow, Text } from "../theme/theme";
+import styled from "styled-components";
+import { about } from "../res/content";
+import { Text } from "../theme/theme";
+import { AboutCards } from "./about-cards";
 
 export const AboutContent = () => {
   return (
@@ -10,158 +10,26 @@ export const AboutContent = () => {
         About
       </Text>
 
-      <Text variant="text">{about}</Text>
+      <Text variant="text" m={{ b: 16 }}>
+        Hey, I&apos;m Ondřej Pešička, a product designer based in Prague,
+        Czechia.
+      </Text>
+      <Text variant="text" m={{ b: 16 }}>
+        I&apos;m passionate about creating accessible experiences that leave a
+        positive impact on people.
+      </Text>
+      <Text variant="text">
+        While having experience in visual design and 3D/2D animation my main
+        focus is Product design and UI/UX. I believe that good design is
+        essential for creating products people will love.
+      </Text>
 
-      {aboutData.map((item, key) => (
-        <Section key={item.type}>
-          {/* @ts-ignore */}
-          <Text variant="h3" color={item.color} as="h2" p={{ all: 24 }}>
-            {item.type}
-          </Text>
-          {aboutData[key].data.map((item: any) => (
-            <Item
-              href={item.link}
-              target="_blank"
-              key={item.name}
-              data-var={item.color}
-              rel="nofollow noopener"
-            >
-              <MainContainer>
-                {GetIcon(item.icon)}
-                <TextContainer>
-                  <HeadingContainer>
-                    <Text variant="h4" as="h3" color="inherit.0">
-                      {item.name}
-                    </Text>
-                    {GetArrow(item.link)}
-                  </HeadingContainer>
-                  <Text variant="footnote">{item.description}</Text>
-                </TextContainer>
-              </MainContainer>
-              {GetSpacing(item.icon, item.date)}
-            </Item>
-          ))}
-        </Section>
-      ))}
+      <AboutCards />
     </Container>
   );
 };
 
-const GetArrow = (p: any) => {
-  if (p !== null) {
-    return (
-      <Image src="/arrow.svg" width="16px" height="16px" alt="arrow right" />
-    );
-  } else {
-    return;
-  }
-};
-
-const GetIcon = (p: any) => {
-  if (p !== null) {
-    return <Image src={p} width="36px" height="36px" alt="logo" />;
-  } else {
-    return;
-  }
-};
-
-const GetSpacing = (p: any, date: string) => {
-  if (p !== null) {
-    return (
-      <DateContainer>
-        <Text variant="footnote" color="neutral.400">
-          {date}
-        </Text>
-      </DateContainer>
-    );
-  } else {
-    return (
-      <Text variant="footnote" color="neutral.400">
-        {date}
-      </Text>
-    );
-  }
-};
-const HeadingContainer = styled.div`
-  display: flex;
-  gap: 8px;
-`;
 const Container = styled.div`
   max-width: 640px;
   margin: auto;
-`;
-const Section = styled.div`
-  margin-top: 80px;
-  margin-bottom: 80px;
-  background: linear-gradient(
-    163.1deg,
-    ${color("neutral.850")} -74.91%,
-    ${color("neutral.900")} 92.81%
-  );
-  border: 1px solid ${color("neutral.800")};
-  border-radius: 16px;
-  ${shadow("l2")};
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      margin-top: 40px;
-      margin-bottom: 40px;
-    `
-  )}
-`;
-const Item = styled.a`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
-  border-top: 1px solid ${color("neutral.800")};
-  border-bottom: none;
-  color: ${color("neutral.50")};
-  text-decoration: none;
-  transition: 120ms;
-  &[data-var="primary"]:hover {
-    background-color: ${color("neutral.850")};
-    cursor: pointer;
-    color: ${color("primary.400")};
-  }
-  &[data-var="success"]:hover {
-    color: ${color("success.400")};
-    background-color: ${color("neutral.850")};
-    cursor: pointer;
-  }
-  &[data-var="danger"]:hover {
-    color: ${color("danger.400")};
-    background-color: ${color("neutral.850")};
-    cursor: pointer;
-  }
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      flex-direction: column;
-      align-items: flex-start;
-    `
-  )}
-`;
-const DateContainer = styled.div`
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      margin-left: 60px;
-    `
-  )}
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-`;
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
 `;

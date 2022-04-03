@@ -30,8 +30,7 @@ export const Header = () => {
 };
 
 const Avatar = styled.div`
-  height: "40px";
-  width: "40px";
+  height: 40px;
   border-radius: 100%;
   overflow: hidden;
 `;

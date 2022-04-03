@@ -29,7 +29,7 @@ export const featured = [
 ];
 
 export const about =
-  "I’m Ondřej Pešička a multidisciplinary digital designer based in Prague,  Czechia experienced in UI design, user experience and creating design systems. I’m passionate about designing experiences that leave a positive impact on people.";
+  "I’m Ondřej Pešička, a product designer based in Prague, Czechia. \n I'm passionate about creating accessible experiences that leave a positive impact on people. \n While having experience in visual design and 3D/2D animation my main focus is Product design and UI/UX. I believe that good design is essential for creating products people will love.";
 
 export const aboutData = [
   {
