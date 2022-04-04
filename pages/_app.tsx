@@ -1,5 +1,6 @@
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 import { Fragment } from "react";
 import { GlobalStyle } from "../styles/GlobalStyle";
 
@@ -26,6 +27,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           },
         ]}
       />
+
+      <Script
+        strategy="afterInteractive"
+        data-domain="opesicka.com"
+        src="https://plausible.io/js/plausible.js"
+      />
+
       <GlobalStyle />
       <Component {...pageProps} />
     </Fragment>
