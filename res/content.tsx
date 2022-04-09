@@ -123,13 +123,12 @@ export const aboutData = [
     ],
   },
   {
-    type: "Projects",
+    type: "Education",
     color: "danger.400",
     data: [
       {
         name: "Computer animation and multimedia",
-        description:
-          "Střední odborná škola multimediální a propagační tvorby s.r.o. (EDUSO)",
+        description: "Střední odborná škola multimediální a propagační tvorby s.r.o. (EDUSO)",
         date: "2014 - 2018",
         icon: null,
         link: "https://www.eduso.cz/",
