@@ -14,13 +14,7 @@ export const AboutCards = () => {
           </Text>
 
           {aboutData[key].data.map((item: any) => (
-            <Item
-              href={item.link}
-              target="_blank"
-              key={item.name}
-              data-var={item.color}
-              rel="nofollow noopener"
-            >
+            <Item href={item.link} target="_blank" key={item.name} data-var={item.color} rel="nofollow noopener">
               <MainContainer>
                 {GetIcon(item.icon)}
                 <TextContainer>
@@ -44,9 +38,7 @@ export const AboutCards = () => {
 
 const GetArrow = (p: any) => {
   if (p !== null) {
-    return (
-      <Image src="/arrow.svg" width="16px" height="16px" alt="arrow right" />
-    );
+    return <Image src="/arrow.svg" width="16px" height="16px" alt="arrow right" />;
   } else {
     return;
   }
@@ -84,13 +76,10 @@ const HeadingContainer = styled.div`
 const Section = styled.div`
   margin-top: 80px;
   margin-bottom: 80px;
-  background: linear-gradient(
-    163.1deg,
-    ${color("neutral.850")} -74.91%,
-    ${color("neutral.900")} 92.81%
-  );
+  background: linear-gradient(163.1deg, ${color("neutral.850")} -74.91%, ${color("neutral.900")} 92.81%);
   border: 1px solid ${color("neutral.800")};
   border-radius: 16px;
+  overflow: hidden;
   ${shadow("l2")};
   ${breakpoint(
     "mobile",
