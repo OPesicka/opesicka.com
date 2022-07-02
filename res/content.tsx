@@ -1,24 +1,33 @@
 export const featured = [
   {
-    icon: "/apify.svg",
+    image: "/apify.png",
     alt: "Apify logo",
     name: "Apify",
-    description: "Making the web more programmable.",
+    description: "The most powerful web scraping and automation platform",
     link: "https://apify.com/",
     rel: "",
     button: "Visit website",
   },
   {
-    icon: "/alfaoptima.svg",
+    image: "/atmos.png",
+    alt: "Atmos",
+    name: "Atmos",
+    description: "Gelping designers create better color palettes",
+    link: "https://atmos.style/",
+    rel: "",
+    button: "Visit website",
+  },
+  {
+    image: "/alfaoptima.png",
     alt: "Alfaoptima logo",
     name: "Alfaoptima",
-    description: " Giving time back to healthcare workers.",
+    description: "Saving time for healthcare workers with smart shift planning.",
     link: "https://www.behance.net/gallery/107464717/Alfaoptima-Case-study",
     rel: "nofollow noopener",
     button: "See case study",
   },
   {
-    icon: "/spaceti.svg",
+    image: "/spaceti.png",
     alt: "Spaceti logo",
     name: "Spaceti",
     description: "Creating IoT platform that brings transparency to workplaces",
@@ -55,7 +64,7 @@ export const aboutData = [
       {
         name: "Alfaoptima",
         description: "Product designer",
-        date: "Jan 2020 - Current",
+        date: "Jan 2020 - Apr 2021",
         icon: "/alfaoptima.svg",
         link: "https://alfaoptima.cz/",
         color: "primary",
@@ -91,6 +100,14 @@ export const aboutData = [
     type: "Projects",
     color: "success.400",
     data: [
+      {
+        name: "rbnd studio",
+        description: "Design & Development studio",
+        date: "May 2022 - Current",
+        icon: null,
+        link: "https://www.rbnd.studio/",
+        color: "success",
+      },
       {
         name: "Yourfleet",
         description: "Web app",

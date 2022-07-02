@@ -11,17 +11,13 @@ export const AboutContent = () => {
       </Text>
 
       <Text variant="text" m={{ b: 16 }}>
-        Hey, I&apos;m Ondřej Pešička, a product designer based in Prague,
-        Czechia.
+        Hey, I&apos;m Ondřej Pešička, a product designer based in Prague, Czechia.
       </Text>
       <Text variant="text" m={{ b: 16 }}>
-        I&apos;m passionate about creating accessible experiences that leave a
-        positive impact on people.
+        I&apos;m passionate about creating accessible experiences that leave a positive impact on people.
       </Text>
       <Text variant="text">
-        While having experience in visual design and 3D/2D animation my main
-        focus is Product design and UI/UX. I believe that good design is
-        essential for creating products people will love.
+        While having experience in visual design and 3D/2D animation my main focus is Product design and UI/UX. I believe that good design is essential for creating products people will love.
       </Text>
 
       <AboutCards />
@@ -30,6 +26,5 @@ export const AboutContent = () => {
 };
 
 const Container = styled.div`
-  max-width: 640px;
   margin: auto;
 `;

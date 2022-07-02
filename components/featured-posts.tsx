@@ -12,57 +12,47 @@ export const FeaturedPosts = () => {
       </Text>
       <SGrid>
         {featured.map((item) => (
-          <Post key={item.name}>
-            <Icon>
-              <Image
-                src={item.icon}
-                width="56px"
-                height="56px"
-                alt={item.alt}
-              />
-            </Icon>
-            <Text variant="h3" as="h3">
-              {item.name}
-            </Text>
-            <Text variant="footnote" m={{ t: 8 }} color="neutral.300">
-              {item.description}
-            </Text>
-            <Button href={item.link} rel={item.rel} target="_blank">
-              {item.button}
-            </Button>
-          </Post>
+          <SDiv key={item.name}>
+            <SImage src={item.image} width="340px" height="220px" layout="responsive" objectFit="fill" alt="s" />
+            <Post>
+              <Text variant="h3" as="h3" color="primary.400">
+                {item.name}
+              </Text>
+              <Text variant="footnote" color="neutral.300">
+                {item.description}
+              </Text>
+              <Button href={item.link} rel={item.rel} target="_blank">
+                {item.button}
+              </Button>
+            </Post>
+          </SDiv>
         ))}
       </SGrid>
     </Conatiner>
   );
 };
+const SDiv = styled.div`
+  display: block;
+`;
+
+const SImage = styled(Image)`
+  border-radius: 12px;
+`;
 
 const Post = styled.div`
-  ${shadow("l2")};
-  border-radius: 12px;
   width: auto;
   transition: 160ms;
-  // background: ${color("neutral.900")};
-  border: 1px solid ${color("neutral.800")};
-  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: linear-gradient(
-    163.1deg,
-    ${color("neutral.850")} -74.91%,
-    ${color("neutral.900")} 92.81%
-  );
-`;
-
-const Icon = styled.div`
-  margin-bottom: 40px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 `;
 
 const SGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
   margin-top: 24px;
   ${breakpoint(
     "mobile",

@@ -1,9 +1,5 @@
 import { FC, ReactNode } from "react";
-import styled, {
-  BaseThemedCssFunction,
-  css,
-  ThemedCssFunction,
-} from "styled-components";
+import styled, { BaseThemedCssFunction, css, ThemedCssFunction } from "styled-components";
 import { RecursiveKeyOf } from "../types/RecursiveKeyOf";
 import { palette } from "./palette";
 import { margin, MarginOptions, padding, PaddingOptions } from "./utils";
@@ -22,16 +18,7 @@ export const Text = (props: Props) => {
   return <SText {...props}>{props.children}</SText>;
 };
 
-type FontVariant =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "text"
-  | "textStrong"
-  | "footnote"
-  | "footnoteStrong"
-  | "display";
+type FontVariant = "h1" | "h2" | "h3" | "h4" | "text" | "textStrong" | "footnote" | "footnoteStrong" | "display";
 
 const fontDefinition: Record<
   FontVariant,
@@ -46,28 +33,28 @@ const fontDefinition: Record<
   h1: {
     fontSize: 48,
     lineHeight: 64,
-    weight: 700,
+    weight: 800,
     mobileFontSize: 40,
     mobileLineHeight: 56,
   },
   h2: {
     fontSize: 32,
     lineHeight: 40,
-    weight: 700,
+    weight: 800,
     mobileFontSize: 30,
     mobileLineHeight: 36,
   },
   h3: {
     fontSize: 24,
     lineHeight: 36,
-    weight: 700,
+    weight: 800,
     mobileFontSize: 24,
     mobileLineHeight: 36,
   },
   h4: {
     fontSize: 20,
     lineHeight: 32,
-    weight: 700,
+    weight: 800,
     mobileFontSize: 20,
     mobileLineHeight: 32,
   },
@@ -102,7 +89,7 @@ const fontDefinition: Record<
   display: {
     fontSize: 72,
     lineHeight: 88,
-    weight: 800,
+    weight: 900,
     mobileFontSize: 48,
     mobileLineHeight: 64,
   },
@@ -114,9 +101,7 @@ export const text = (variant: FontVariant) => {
     font-size: ${definition.fontSize}px;
     line-height: ${definition.lineHeight}px;
     font-weight: ${definition.weight};
-    font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      "sans-serif";
+    font-family: "Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
     ${breakpoint(
       "mobile",
       "down",
@@ -143,8 +128,7 @@ export const shadow = (variant: Shadows) => {
 };
 
 const SText = styled.p.withConfig<Props>({
-  shouldForwardProp: (propName) =>
-    !["color", "variant", "m", "p"].includes(propName),
+  shouldForwardProp: (propName) => !["color", "variant", "m", "p"].includes(propName),
 })`
   margin: 0;
   ${(props) => margin(props.m)};
@@ -164,14 +148,8 @@ export const color = (key: ColorKey) => {
   }, palette);
 };
 
-export const breakpoint = (
-  breakpoint: keyof Breakpoints,
-  when: "up" | "down",
-  styles: ReturnType<ThemedCssFunction<Props>>
-) => {
-  const condition = `${when === "down" ? "max-width" : "min-width"}: ${
-    breakpoints[breakpoint] - (when === "down" ? 1 : 0)
-  }px`;
+export const breakpoint = (breakpoint: keyof Breakpoints, when: "up" | "down", styles: ReturnType<ThemedCssFunction<Props>>) => {
+  const condition = `${when === "down" ? "max-width" : "min-width"}: ${breakpoints[breakpoint] - (when === "down" ? 1 : 0)}px`;
   return css`
     @media (${condition}) {
       ${styles}

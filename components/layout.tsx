@@ -22,8 +22,8 @@ const Container = styled.main`
 `;
 
 const SLayout = styled.div`
-  max-width: 960px;
-  padding: 0 40px;
+  max-width: 720px;
+  padding: 0 64px;
   margin: auto;
   ${breakpoint(
     "mobile",
