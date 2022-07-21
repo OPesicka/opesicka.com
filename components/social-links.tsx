@@ -10,11 +10,7 @@ export const SocialLinks = (props: Props) => {
     <>
       <SUl>
         <li>
-          <SLink
-            variant={props.variant}
-            href="https://www.linkedin.com/in/opesicka/"
-            rel="nofollow noopener"
-          >
+          <SLink variant={props.variant} href="https://www.linkedin.com/in/opesicka/" rel="nofollow noopener">
             Linkedin
           </SLink>
         </li>
@@ -22,11 +18,7 @@ export const SocialLinks = (props: Props) => {
           <SText variant={props.variant}>/</SText>
         </li>
         <li>
-          <SLink
-            variant={props.variant}
-            href="https://dribbble.com/OPesicka"
-            rel="nofollow noopener"
-          >
+          <SLink variant={props.variant} href="https://dribbble.com/OPesicka" rel="nofollow noopener">
             Dribbble
           </SLink>
         </li>
@@ -34,11 +26,7 @@ export const SocialLinks = (props: Props) => {
           <SText variant={props.variant}>/</SText>
         </li>
         <li>
-          <SLink
-            variant={props.variant}
-            href="https://www.behance.net/OPesicka"
-            rel="nofollow noopener"
-          >
+          <SLink variant={props.variant} href="https://www.behance.net/OPesicka" rel="nofollow noopener">
             Behance
           </SLink>
         </li>
@@ -49,13 +37,11 @@ export const SocialLinks = (props: Props) => {
 
 const SLink = styled.a<Props>`
   ${text("footnote")};
-  color: ${(props) =>
-    color(props.variant === "white" ? "neutral.50" : "neutral.400")};
+  color: ${(props) => color(props.variant === "white" ? "neutral.50" : "neutral.400")};
   text-decoration: none;
   transition: all 160ms;
   :hover {
-    color: ${(props) =>
-      color(props.variant === "white" ? "neutral.200" : "primary.500")};
+    color: ${(props) => color(props.variant === "white" ? "neutral.200" : "primary.500")};
   }
 `;
 
@@ -68,7 +54,6 @@ const SUl = styled.ul`
 
 const SText = styled.p<Props>`
   ${text("footnote")};
-  color: ${(props) =>
-    color(props.variant === "white" ? "neutral.300" : "primary.400")};
+  color: ${(props) => color(props.variant === "white" ? "neutral.300" : "primary.400")};
   margin: 0;
 `;

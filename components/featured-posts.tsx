@@ -12,27 +12,28 @@ export const FeaturedPosts = () => {
       </Text>
       <SGrid>
         {featured.map((item) => (
-          <SDiv key={item.name}>
+          <ContainerS key={item.name}>
             <SImage src={item.image} width="340px" height="220px" layout="responsive" objectFit="fill" alt="s" />
             <Post>
               <Text variant="h3" as="h3" color="primary.400">
                 {item.name}
               </Text>
-              <Text variant="footnote" color="neutral.300">
-                {item.description}
-              </Text>
+              <Text variant="text">{item.description}</Text>
               <Button href={item.link} rel={item.rel} target="_blank">
                 {item.button}
               </Button>
             </Post>
-          </SDiv>
+          </ContainerS>
         ))}
       </SGrid>
     </Conatiner>
   );
 };
-const SDiv = styled.div`
-  display: block;
+
+const ContainerS = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
 `;
 
 const SImage = styled(Image)`
@@ -45,13 +46,13 @@ const Post = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 24px;
-  margin-bottom: 24px;
+
+  gap: 8px;
 `;
 
 const SGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 40px;
   margin-top: 24px;
   ${breakpoint(

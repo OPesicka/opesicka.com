@@ -14,8 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           type: "website",
           title: "Ondřej Pešička",
           url: "https://opesicka.com/",
-          description:
-            "Ondřej Pešička is a professional product designer based in Prague, Czechia",
+          description: "Ondřej Pešička is a professional product designer based in Prague, Czechia",
           images: [{ url: "https://opesicka.com/og.png" }],
         }}
         twitter={{ cardType: "summary_large_image", handle: "@opesicka" }}
@@ -28,11 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ]}
       />
 
-      <Script
-        strategy="afterInteractive"
-        data-domain="opesicka.com"
-        src="https://plausible.io/js/plausible.js"
-      />
+      <Script strategy="afterInteractive" data-domain="opesicka.com" src="https://plausible.io/js/plausible.js" />
 
       <GlobalStyle />
       <Component {...pageProps} />

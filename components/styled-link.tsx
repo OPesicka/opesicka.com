@@ -5,7 +5,7 @@ import { color, text } from "../theme/theme";
 type Props = {
   href?: string;
   children: ReactNode;
-  variant?: "white";
+  variant?: "white" | "primary";
 };
 
 export const StyledLink = (props: Props) => {
@@ -14,12 +14,11 @@ export const StyledLink = (props: Props) => {
 
 const SLink = styled.a<Props>`
   ${text("textStrong")};
-  color: ${color("neutral.50")};
+  color: ${(props) => color(props.variant === "primary" ? "primary.400" : "neutral.50")};
   text-decoration: none;
   transition: all 160ms;
   :hover {
     color: ${color("primary.500")};
-    color: ${(props) =>
-      color(props.variant === "white" ? "neutral.200" : "primary.500")};
+    color: ${(props) => color(props.variant === "white" ? "neutral.200" : "primary.500")};
   }
 `;

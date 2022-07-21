@@ -11,39 +11,35 @@ export const Hero = () => {
         <Text variant="textStrong" color="neutral.100" m={{ t: 0 }}>
           Hi there, I&apos;m
         </Text>
-        <Text variant="display" as="h1" m={{ b: 24 }}>
-          Ondřej Pešička
+        <Text variant="display" as="h1" color="primary.500" m={{ b: 24 }}>
+          Ondrej Pesicka
         </Text>
+
         <Text variant="text" m={{ b: 24 }}>
           Product designer at{" "}
-          <StyledLink variant="white" href="/">
+          <StyledLink variant="primary" href="/">
             Apify
           </StyledLink>
           , and Co&#8209;founder of{" "}
-          <StyledLink variant="white" href="/">
+          <StyledLink variant="primary" href="/">
             Atmos
           </StyledLink>{" "}
-          helping designers create better color palettes. I also ride mountain
-          bikes and hack Figma.
+          helping designers create better color palettes. I also ride mountain bikes and hack Figma.
         </Text>
-        <SocialLinks variant="white" />
+        <SocialLinks />
       </ContentContainer>
-      <Animation>
+      {/* <Animation>
         <Blobs />
-      </Animation>
+      </Animation> */}
     </Container>
   );
 };
 
 const ContentContainer = styled.div`
-  max-width: 640px;
   margin: auto;
   margin-top: 80px;
-  margin-bottom: 80px;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   ${breakpoint(
     "mobile",
     "down",

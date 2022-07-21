@@ -34,6 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     url("https://rsms.me/inter/font-files/Inter-Black.woff?v=3.19") format("woff");
 }
 
+
     body {
         background-color: ${color("neutral.950")};
         overflow-x: hidden;
