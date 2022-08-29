@@ -6,6 +6,8 @@ type Props = {
   href?: string;
   children: ReactNode;
   variant?: "white" | "primary";
+  rel?: string;
+  target?: string;
 };
 
 export const StyledLink = (props: Props) => {

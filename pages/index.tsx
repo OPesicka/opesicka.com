@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 
-import { FeaturedPosts } from "../components/featured-posts";
+import { FeaturedWork } from "../components/featured-posts";
 import { Hero } from "../components/hero";
 import { Layout } from "../components/layout";
+import { featuredWork } from "../res/content";
 
 const Home: NextPage = () => {
   return (
@@ -10,8 +11,8 @@ const Home: NextPage = () => {
       <link rel="icon" href="/favicon.ico" />
 
       <Layout>
-        <Hero></Hero>
-        <FeaturedPosts></FeaturedPosts>
+        <Hero />
+        <FeaturedWork />
       </Layout>
     </>
   );

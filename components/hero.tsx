@@ -12,16 +12,16 @@ export const Hero = () => {
           Hi there, I&apos;m
         </Text>
         <Text variant="display" as="h1" color="primary.500" m={{ b: 24 }}>
-          Ondrej Pesicka
+          Ondřej Pešička
         </Text>
 
         <Text variant="text" m={{ b: 24 }}>
           Product designer at{" "}
-          <StyledLink variant="primary" href="/">
+          <StyledLink variant="primary" href="https://apify.com/" target="_blank" rel="noopener">
             Apify
           </StyledLink>
           , and Co&#8209;founder of{" "}
-          <StyledLink variant="primary" href="/">
+          <StyledLink variant="primary" href="https://atmos.style/" target="_blank" rel="noopener">
             Atmos
           </StyledLink>{" "}
           helping designers create better color palettes. I also ride mountain bikes and hack Figma.

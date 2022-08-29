@@ -1,39 +1,58 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
-import { featured } from "../res/content";
-import { breakpoint, color, shadow, Text } from "../theme/theme";
-import { Button } from "./button";
+import { featuredWork } from "../res/content";
+import { breakpoint, color, Text } from "../theme/theme";
+import { StyledLink } from "./styled-link";
 
-export const FeaturedPosts = () => {
+export const FeaturedWork = () => {
   return (
     <Conatiner>
       <Text variant="h2" as="h2">
-        Featured work
+        Work
       </Text>
       <SGrid>
-        {featured.map((item) => (
-          <ContainerS key={item.name}>
-            <SImage src={item.image} width="340px" height="220px" layout="responsive" objectFit="fill" alt="s" />
-            <Post>
-              <Text variant="h3" as="h3" color="primary.400">
+        {featuredWork.map((item) => (
+          <Post key={item.name}>
+            <BulletContainer>
+              <SBullet />
+              <SLine />
+            </BulletContainer>
+            <Text variant="text" color="neutral.200">
+              {item.adjective}{" "}
+              <StyledLink variant="primary" href={item.link} rel={item.rel} target="_blank">
                 {item.name}
-              </Text>
-              <Text variant="text">{item.description}</Text>
-              <Button href={item.link} rel={item.rel} target="_blank">
-                {item.button}
-              </Button>
-            </Post>
-          </ContainerS>
+              </StyledLink>{" "}
+              {item.description}
+            </Text>
+          </Post>
         ))}
       </SGrid>
     </Conatiner>
   );
 };
+const BulletContainer = styled.div`
+  height: 100%;
+  width: 18px;
+`;
 
-const ContainerS = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 24px;
+const SLine = styled.div`
+  height: calc(100% - 10px);
+  width: 3px;
+  background-color: ${color("neutral.700")};
+  position: relative;
+  left: 7px;
+  top: 0px;
+  border-radius: 1.5px;
+`;
+
+const SBullet = styled.div`
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  border: 3px solid ${color("neutral.500")};
+  margin-top: 7px;
+  margin-bottom: 7px;
+  background-color: ${color("neutral.850")};
 `;
 
 const SImage = styled(Image)`
@@ -44,16 +63,17 @@ const Post = styled.div`
   width: auto;
   transition: 160ms;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-
   gap: 8px;
+  :last-of-type > div:nth-child(1) > div:nth-child(2) {
+    display: none;
+  }
 `;
 
 const SGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 40px;
+  gap: 24px;
   margin-top: 24px;
   ${breakpoint(
     "mobile",
