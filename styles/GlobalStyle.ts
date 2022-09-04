@@ -40,4 +40,8 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         margin: 0;
     }
+  :root {
+  color-scheme: dark;
+}
+
 `;

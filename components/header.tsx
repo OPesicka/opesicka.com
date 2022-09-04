@@ -20,7 +20,7 @@ export const Header = () => {
 
 const SHeader = styled.header`
   display: flex;
-  padding: 24px 0;
+  padding-bottom: 24px;
   align-items: center;
   gap: 8px;
   margin: auto;

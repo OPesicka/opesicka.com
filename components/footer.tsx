@@ -21,7 +21,7 @@ export const Footer = () => {
 };
 
 const Container = styled.div`
-  margin-top: 160px;
+  margin-top: 120px;
 `;
 
 const SBox = styled.div`

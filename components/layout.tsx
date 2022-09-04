@@ -15,13 +15,13 @@ export const Layout: FC = (props) => {
 };
 
 const Container = styled.main`
-  margin-top: 40px;
   margin-bottom: 40px;
 `;
 
 const SLayout = styled.div`
   max-width: 720px;
   padding: 0 64px;
+  padding-top: 64px;
   margin: auto;
   ${breakpoint(
     "mobile",

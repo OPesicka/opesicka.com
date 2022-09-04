@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import styled from "styled-components";
 
 import { FeaturedWork } from "../components/featured-posts";
 import { Hero } from "../components/hero";
@@ -12,11 +13,20 @@ const Home: NextPage = () => {
 
       <Layout>
         <Hero />
-        <FeaturedWork title="Work" content={featuredWork} />
-        <FeaturedWork title="Writing" content={featuredWriting} />
+        <Container>
+          <FeaturedWork title="Work" content={featuredWork} />
+          <FeaturedWork title="Writing" content={featuredWriting} />
+        </Container>
       </Layout>
     </>
   );
 };
 
 export default Home;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding-top: 120px;
+`;

@@ -37,7 +37,7 @@ export const Hero = () => {
 
 const ContentContainer = styled.div`
   margin: auto;
-  margin-top: 24px;
+
   display: flex;
   flex-direction: column;
   ${breakpoint(
@@ -46,22 +46,6 @@ const ContentContainer = styled.div`
     css`
       margin-top: 40px;
       margin-bottom: 0px;
-    `
-  )}
-`;
-
-const Animation = styled.div`
-  z-index: -1000;
-  position: absolute;
-  left: calc(50vw - 480px);
-  width: 100%;
-  max-width: 960px;
-  ${breakpoint(
-    "mobile",
-    "down",
-    css`
-      left: calc(50vw - 160px);
-      max-width: 320px;
     `
   )}
 `;

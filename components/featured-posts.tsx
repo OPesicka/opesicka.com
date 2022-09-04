@@ -12,7 +12,7 @@ type Props = {
 
 export const FeaturedWork = (props: Props) => {
   return (
-    <Conatiner>
+    <div>
       <Text variant="h2" as="h2">
         {props.title}
       </Text>
@@ -24,7 +24,7 @@ export const FeaturedWork = (props: Props) => {
           </Post>
         ))}
       </SGrid>
-    </Conatiner>
+    </div>
   );
 };
 
@@ -68,8 +68,4 @@ const SGrid = styled.div`
       gap: 32px;
     `
   )}
-`;
-
-const Conatiner = styled.div`
-  margin-top: 140px;
 `;
