@@ -1,62 +1,47 @@
-import Image from "next/image";
 import styled, { css } from "styled-components";
-import { featuredWork } from "../res/content";
-import { breakpoint, color, Text } from "../theme/theme";
-import { StyledLink } from "./styled-link";
+import ArticleIcon from "../assets/article";
+import WorkIcon from "../assets/work";
+import ActiveWorkIcon from "../assets/workActive";
+import { FeaturedType } from "../res/content";
+import { breakpoint, Text } from "../theme/theme";
 
-export const FeaturedWork = () => {
+type Props = {
+  title: string;
+  content: FeaturedType[];
+};
+
+export const FeaturedWork = (props: Props) => {
   return (
     <Conatiner>
       <Text variant="h2" as="h2">
-        Work
+        {props.title}
       </Text>
       <SGrid>
-        {featuredWork.map((item) => (
-          <Post key={item.name}>
-            <BulletContainer>
-              <SBullet />
-              <SLine />
-            </BulletContainer>
-            <Text variant="text" color="neutral.200">
-              {item.adjective}{" "}
-              <StyledLink variant="primary" href={item.link} rel={item.rel} target="_blank">
-                {item.name}
-              </StyledLink>{" "}
-              {item.description}
-            </Text>
+        {props.content.map((item) => (
+          <Post key={item.description.toString()}>
+            <BulletContainer>{GetIcon(item.type)}</BulletContainer>
+            {item.description}
           </Post>
         ))}
       </SGrid>
     </Conatiner>
   );
 };
+
+const GetIcon = (type: any) => {
+  if (type === "active") {
+    return <ActiveWorkIcon />;
+  } else if (type === "dead") {
+    return <WorkIcon />;
+  } else if (type === "article") {
+    return <ArticleIcon />;
+  }
+};
+
 const BulletContainer = styled.div`
-  height: 100%;
-  width: 18px;
-`;
-
-const SLine = styled.div`
-  height: calc(100% - 10px);
-  width: 3px;
-  background-color: ${color("neutral.700")};
-  position: relative;
-  left: 7px;
-  top: 0px;
-  border-radius: 1.5px;
-`;
-
-const SBullet = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  border: 3px solid ${color("neutral.500")};
-  margin-top: 7px;
-  margin-bottom: 7px;
-  background-color: ${color("neutral.850")};
-`;
-
-const SImage = styled(Image)`
-  border-radius: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 16px;
 `;
 
 const Post = styled.div`
@@ -64,7 +49,7 @@ const Post = styled.div`
   transition: 160ms;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 12px;
   :last-of-type > div:nth-child(1) > div:nth-child(2) {
     display: none;
   }

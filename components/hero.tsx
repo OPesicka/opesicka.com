@@ -1,6 +1,6 @@
+import Link from "next/link";
 import styled, { css } from "styled-components";
 import { breakpoint, Text } from "../theme/theme";
-import { Blobs } from "./blobs";
 import { SocialLinks } from "./social-links";
 import { StyledLink } from "./styled-link";
 
@@ -24,20 +24,20 @@ export const Hero = () => {
           <StyledLink variant="primary" href="https://atmos.style/" target="_blank" rel="noopener">
             Atmos
           </StyledLink>{" "}
-          helping designers create better color palettes. I also ride mountain bikes and hack Figma.
+          helping designers create better color palettes. I also ride mountain bikes and hack Figma.{" "}
+          <Link href="/about" passHref>
+            <StyledLink variant="primary">Read more</StyledLink>
+          </Link>
         </Text>
         <SocialLinks />
       </ContentContainer>
-      {/* <Animation>
-        <Blobs />
-      </Animation> */}
     </Container>
   );
 };
 
 const ContentContainer = styled.div`
   margin: auto;
-  margin-top: 80px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   ${breakpoint(

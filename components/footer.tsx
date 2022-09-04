@@ -29,7 +29,7 @@ const SBox = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 64px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   ${breakpoint(
     "mobile",
     "down",

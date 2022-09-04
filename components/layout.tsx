@@ -2,13 +2,11 @@ import { FC } from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../theme/theme";
 import { Footer } from "./footer";
-import { Header } from "./header";
 
 export const Layout: FC = (props) => {
   return (
     <>
       <SLayout>
-        <Header />
         <Container>{props.children}</Container>
         <Footer />
       </SLayout>

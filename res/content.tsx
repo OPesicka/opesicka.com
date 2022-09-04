@@ -1,31 +1,74 @@
-export const featuredWork = [
+import { ReactElement } from "react";
+import { StyledLink } from "../components/styled-link";
+import { Text } from "../theme/theme";
+
+export type FeaturedType = {
+  description: ReactElement;
+  type: string;
+};
+
+export const featuredWork: FeaturedType[] = [
   {
-    adjective: "Working at",
-    name: "Apify",
-    description: "the most powerful web scraping and automation platform.",
-    link: "https://apify.com/",
-    rel: "noopener",
+    type: "active",
+    description: (
+      <Text variant="text">
+        Working at{" "}
+        <StyledLink variant="primary" href="https://apify.com/" rel="nofollow noopener" target="_blank">
+          Apify
+        </StyledLink>{" "}
+        the most powerful web scraping and automation platform.
+      </Text>
+    ),
   },
   {
-    adjective: "Co-founded",
-    name: "Atmos",
-    description: "everything you need to create color palettes.",
-    link: "https://atmos.style/",
-    rel: "noopener",
+    type: "active",
+    description: (
+      <Text variant="text">
+        Co-founded{" "}
+        <StyledLink variant="primary" href="https://atmos.style/" rel="noopener" target="_blank">
+          Atmos
+        </StyledLink>{" "}
+        everything you need to create color palettes.
+      </Text>
+    ),
   },
   {
-    adjective: "Worked on",
-    name: "Alfaoptima",
-    description: "smart shift planning for healthcare workers.",
-    link: "https://www.behance.net/gallery/107464717/Alfaoptima-Case-study",
-    rel: "nofollow noopener",
+    type: "dead",
+    description: (
+      <Text variant="text">
+        Worked on{" "}
+        <StyledLink variant="primary" href="https://www.behance.net/gallery/107464717/Alfaoptima-Case-study" rel="nofollow noopener" target="_blank">
+          Alfaoptima
+        </StyledLink>{" "}
+        smart shift planning for healthcare workers.
+      </Text>
+    ),
   },
   {
-    adjective: "Lead a design team at",
-    name: "Spaceti",
-    description: "IoT platform making workplaces efficient.",
-    link: "https://www.spaceti.com/",
-    rel: "nofollow noopener",
+    type: "dead",
+    description: (
+      <Text variant="text">
+        Lead a design team at{" "}
+        <StyledLink variant="primary" href="https://spaceti.com/" rel="nofollow noopener" target="_blank">
+          Spaceti
+        </StyledLink>{" "}
+        an IoT platform making workplaces efficient.
+      </Text>
+    ),
+  },
+];
+
+export const featuredWriting: FeaturedType[] = [
+  {
+    type: "article",
+    description: (
+      <Text variant="text">
+        LCH is the best color space for UI design{" "}
+        <StyledLink variant="primary" href="https://atmos.style/blog/lch-color-space" rel=" noopener" target="_blank">
+          →
+        </StyledLink>
+      </Text>
+    ),
   },
 ];
 
