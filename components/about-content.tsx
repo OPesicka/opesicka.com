@@ -6,7 +6,7 @@ import { AboutCards } from "./about-cards";
 export const AboutContent = () => {
   return (
     <Container>
-      <Text variant="h1" color="primary.500" as="h1" m={{ b: 24 }}>
+      <Text variant="h1" as="h1" m={{ b: 24 }}>
         About
       </Text>
 

@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 
-import { FeaturedWork } from "../components/featured-posts";
 import { Hero } from "../components/hero";
 import { Layout } from "../components/layout";
-import { featuredWork, featuredWriting } from "../res/content";
+import { Projects } from "../components/projects";
 
 const Home: NextPage = () => {
   return (
@@ -14,8 +13,7 @@ const Home: NextPage = () => {
       <Layout>
         <Hero />
         <Container>
-          <FeaturedWork title="Work" content={featuredWork} />
-          <FeaturedWork title="Writing" content={featuredWriting} />
+          <Projects />
         </Container>
       </Layout>
     </>

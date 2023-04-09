@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, text } from "../theme/theme";
+import { semanticColor, text } from "../theme/theme";
 
 type Props = {
   variant?: "white";
@@ -37,11 +37,12 @@ export const SocialLinks = (props: Props) => {
 
 const SLink = styled.a<Props>`
   ${text("footnote")};
-  color: ${(props) => color(props.variant === "white" ? "neutral.50" : "neutral.400")};
+  color: ${semanticColor("neutral.text")};
   text-decoration: none;
   transition: all 160ms;
   :hover {
-    color: ${(props) => color(props.variant === "white" ? "neutral.200" : "primary.500")};
+    color: ${semanticColor("neutral.textSubtle")};
+    text-decoration: underline;
   }
 `;
 
@@ -54,6 +55,6 @@ const SUl = styled.ul`
 
 const SText = styled.p<Props>`
   ${text("footnote")};
-  color: ${(props) => color(props.variant === "white" ? "neutral.300" : "primary.400")};
+  color: ${semanticColor("neutral.textSubtle")};
   margin: 0;
 `;

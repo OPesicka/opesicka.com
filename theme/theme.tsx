@@ -1,14 +1,14 @@
-import { FC, ReactNode } from "react";
-import styled, { BaseThemedCssFunction, css, ThemedCssFunction } from "styled-components";
+import { ReactNode } from "react";
+import styled, { css, ThemedCssFunction } from "styled-components";
 import { RecursiveKeyOf } from "../types/RecursiveKeyOf";
-import { palette } from "./palette";
+import { palette, semanticPalette } from "./palette";
 import { margin, MarginOptions, padding, PaddingOptions } from "./utils";
 
 type Props = {
   variant: FontVariant;
   as?: string | React.ComponentType<unknown>;
   children: ReactNode;
-  color?: ColorKey;
+  color?: SemanticColorKey;
   href?: string;
   m?: MarginOptions;
   p?: PaddingOptions;
@@ -18,7 +18,7 @@ export const Text = (props: Props) => {
   return <SText {...props}>{props.children}</SText>;
 };
 
-type FontVariant = "h1" | "h2" | "h3" | "h4" | "text" | "textStrong" | "footnote" | "footnoteStrong" | "display";
+type FontVariant = "h1" | "h2" | "h3" | "h4" | "text" | "textStrong" | "footnote" | "footnoteStrong" | "eyebrow";
 
 const fontDefinition: Record<
   FontVariant,
@@ -31,50 +31,50 @@ const fontDefinition: Record<
   }
 > = {
   h1: {
-    fontSize: 48,
-    lineHeight: 64,
-    weight: 800,
-    mobileFontSize: 40,
-    mobileLineHeight: 56,
+    fontSize: 40,
+    lineHeight: 48,
+    weight: 700,
+    mobileFontSize: 32,
+    mobileLineHeight: 40,
   },
   h2: {
-    fontSize: 32,
-    lineHeight: 40,
-    weight: 800,
+    fontSize: 28,
+    lineHeight: 32,
+    weight: 700,
     mobileFontSize: 30,
     mobileLineHeight: 36,
   },
   h3: {
     fontSize: 24,
     lineHeight: 36,
-    weight: 800,
+    weight: 600,
     mobileFontSize: 24,
     mobileLineHeight: 36,
   },
   h4: {
-    fontSize: 20,
-    lineHeight: 32,
-    weight: 800,
-    mobileFontSize: 20,
-    mobileLineHeight: 32,
+    fontSize: 16,
+    lineHeight: 24,
+    weight: 600,
+    mobileFontSize: 18,
+    mobileLineHeight: 26,
   },
   text: {
-    fontSize: 20,
-    lineHeight: 32,
+    fontSize: 16,
+    lineHeight: 28,
     weight: 400,
-    mobileFontSize: 20,
+    mobileFontSize: 18,
     mobileLineHeight: 32,
   },
   textStrong: {
-    fontSize: 20,
-    lineHeight: 32,
-    weight: 800,
-    mobileFontSize: 20,
+    fontSize: 16,
+    lineHeight: 28,
+    weight: 600,
+    mobileFontSize: 18,
     mobileLineHeight: 32,
   },
   footnote: {
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: 14,
+    lineHeight: 22,
     weight: 400,
     mobileFontSize: 16,
     mobileLineHeight: 24,
@@ -86,12 +86,12 @@ const fontDefinition: Record<
     mobileFontSize: 16,
     mobileLineHeight: 24,
   },
-  display: {
-    fontSize: 72,
-    lineHeight: 88,
-    weight: 900,
-    mobileFontSize: 48,
-    mobileLineHeight: 64,
+  eyebrow: {
+    fontSize: 14,
+    lineHeight: 22,
+    weight: 700,
+    mobileFontSize: 14,
+    mobileLineHeight: 22,
   },
 };
 
@@ -133,7 +133,7 @@ const SText = styled.p.withConfig<Props>({
   margin: 0;
   ${(props) => margin(props.m)};
   ${(props) => padding(props.p)};
-  color: ${(props) => color(props.color ?? "neutral.50")};
+  color: ${(props) => semanticColor(props.color ?? "neutral.text")};
   ${(props) => {
     return text(props.variant);
   }}
@@ -146,6 +146,15 @@ export const color = (key: ColorKey) => {
     // @ts-ignore
     return acc[key];
   }, palette);
+};
+
+type SemanticColorKey = RecursiveKeyOf<typeof semanticPalette>;
+
+export const semanticColor = (key: SemanticColorKey) => {
+  return key.split(".").reduce((acc, key) => {
+    // @ts-ignore
+    return acc[key];
+  }, semanticPalette);
 };
 
 export const breakpoint = (breakpoint: keyof Breakpoints, when: "up" | "down", styles: ReturnType<ThemedCssFunction<Props>>) => {

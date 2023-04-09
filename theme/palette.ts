@@ -42,21 +42,29 @@ export const palette = {
     50: "#ddf9d2",
   },
   neutral: {
-    950: "#121015",
-    900: "#1c1b20",
-    850: "#26252c",
-    800: "#312f38",
-    700: "#484551",
-    600: "#605d6a",
-    500: "#787484",
-    400: "#938ea1",
-    300: "#ada9ba",
-    200: "#c8c5d4",
-    100: "#e4e1ef",
-    50: "#f2effb",
+    900: "#1C1C1C",
+    800: "#232323",
+    750: "#2A2A2A",
+    700: "#3E3E3E",
+    500: "#808080",
+    200: "#9C9C9C",
+    150: "#d9d9d9",
+    100: "#E5E5E5",
+    50: "#F2F2F2",
     0: "#fff",
   },
   inherit: {
     0: "inherit",
+  },
+};
+
+export const semanticPalette = {
+  neutral: {
+    text: "var(--color-neutral-text)",
+    textSubtle: "var(--color-neutral-text-subtle)",
+    background: "var(--color-neutral-background)",
+    backgroundSubtle: "var(--color-neutral-background-subtle)",
+    border: "var(--color-neutral-border)",
+    hover: "var(--color-neutral-hover)",
   },
 };

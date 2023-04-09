@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-import { semanticColor, text } from "../theme/theme";
+import { semanticColor } from "../theme/theme";
+import { useDarkMode } from "@rbnd/react-dark-mode";
+import SwitchIcon24 from "./switch-icon-24";
 
 type Props = {
   href: string;
@@ -9,33 +11,35 @@ type Props = {
   target?: string;
 };
 
-export const Button = (props: Props) => {
+export const ModeSwitch = () => {
+  const { mode, setMode } = useDarkMode();
+
+  const newMode = mode === "dark" ? "light" : "dark";
+
   return (
-    <SLink href={props.href} rel={props.rel} target={props.target}>
-      <SButton>{props.children}</SButton>
-    </SLink>
+    <SButton onClick={() => setMode(newMode)}>
+      <SwitchIcon24 />
+    </SButton>
   );
 };
 
 const SButton = styled.div`
   background: ${semanticColor("neutral.backgroundSubtle")};
   border: 1px solid ${semanticColor("neutral.border")};
-  padding: 7px 11px;
+  padding: 7px;
   box-sizing: border-box;
   border-radius: 8px;
   transition: all 160ms;
   cursor: pointer;
-  width: auto;
+  color: ${semanticColor("neutral.text")};
+  display: flex;
+
+  position: absolute;
+  top: 16px;
+  right: 16px;
 
   :hover {
     background: ${semanticColor("neutral.hover")};
     box-shadow: var(--shadow-l1);
   }
-`;
-
-const SLink = styled.a`
-  ${text("textStrong")}
-  color: ${semanticColor("neutral.text")};
-  text-decoration: none;
-  line-height: 24px;
 `;

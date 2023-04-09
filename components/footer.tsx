@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { breakpoint, color, text, Text } from "../theme/theme";
+import { breakpoint, semanticColor, text, Text } from "../theme/theme";
 import { SocialLinks } from "./social-links";
 
 export const Footer = () => {
@@ -8,12 +8,11 @@ export const Footer = () => {
       <Text variant="h2" as="h2">
         Want to get in touch?
       </Text>
-      <Text variant="text" color="neutral.400">
+      <Text variant="text" color="neutral.textSubtle">
         I’m always open to new adventures and interesting projects.
       </Text>
       <SBox>
         <SEmail>hello@opesicka.com</SEmail>
-
         <SocialLinks />
       </SBox>
     </Container>
@@ -28,7 +27,7 @@ const SBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 64px;
+  margin-top: 32px;
   margin-bottom: 40px;
   ${breakpoint(
     "mobile",
@@ -44,5 +43,5 @@ const SBox = styled.div`
 const SEmail = styled.p`
   ${text("footnote")};
   margin: 0;
-  color: ${color("neutral.50")};
+  color: ${semanticColor("neutral.textSubtle")};
 `;

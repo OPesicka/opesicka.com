@@ -1,15 +1,19 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 import { aboutData } from "../res/content";
-import { breakpoint, color, shadow, Text } from "../theme/theme";
+import { breakpoint, color, semanticColor, shadow, Text } from "../theme/theme";
 
 export const AboutCards = () => {
   return (
     <>
       {aboutData.map((item, key) => (
         <Section key={item.type}>
-          {/* @ts-ignore */}
-          <Text variant="h3" color={item.color} as="h2" p={{ all: 24 }}>
+          <Text
+            variant="h3"
+            // color={item.color}
+            as="h2"
+            p={{ all: 24 }}
+          >
             {item.type}
           </Text>
 
@@ -19,7 +23,7 @@ export const AboutCards = () => {
                 {GetIcon(item.icon)}
                 <TextContainer>
                   <HeadingContainer>
-                    <Text variant="h4" as="h3" color="inherit.0">
+                    <Text variant="h4" as="h3">
                       {item.name}
                     </Text>
                     {GetArrow(item.link)}
@@ -56,17 +60,11 @@ const GetSpacing = (p: any, date: string) => {
   if (p !== null) {
     return (
       <DateContainer>
-        <Text variant="footnote" color="neutral.400">
-          {date}
-        </Text>
+        <Text variant="footnote">{date}</Text>
       </DateContainer>
     );
   } else {
-    return (
-      <Text variant="footnote" color="neutral.400">
-        {date}
-      </Text>
-    );
+    return <Text variant="footnote">{date}</Text>;
   }
 };
 const HeadingContainer = styled.div`
@@ -76,7 +74,7 @@ const HeadingContainer = styled.div`
 const Section = styled.div`
   margin-top: 80px;
   margin-bottom: 80px;
-  background: linear-gradient(163.1deg, ${color("neutral.850")} -74.91%, ${color("neutral.900")} 92.81%);
+  background: linear-gradient(163.1deg, ${semanticColor("neutral.backgroundSubtle")} -74.91%, ${semanticColor("neutral.background")} 92.81%);
   border: 1px solid ${color("neutral.800")};
   border-radius: 16px;
   overflow: hidden;
@@ -102,18 +100,18 @@ const Item = styled.a`
   text-decoration: none;
   transition: 120ms;
   &[data-var="primary"]:hover {
-    background-color: ${color("neutral.850")};
+    background-color: ${semanticColor("neutral.backgroundSubtle")};
     cursor: pointer;
-    color: ${color("primary.400")};
+    /* color: ${color("primary.400")}; */
   }
   &[data-var="success"]:hover {
-    color: ${color("success.400")};
-    background-color: ${color("neutral.850")};
+    /* color: ${color("success.400")}; */
+    background-color: ${semanticColor("neutral.backgroundSubtle")};
     cursor: pointer;
   }
   &[data-var="danger"]:hover {
-    color: ${color("danger.400")};
-    background-color: ${color("neutral.850")};
+    /* color: ${color("danger.400")}; */
+    background-color: ${semanticColor("neutral.backgroundSubtle")};
     cursor: pointer;
   }
   ${breakpoint(

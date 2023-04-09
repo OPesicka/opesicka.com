@@ -1,45 +1,41 @@
-import Link from "next/link";
 import styled, { css } from "styled-components";
 import { breakpoint, Text } from "../theme/theme";
-import { SocialLinks } from "./social-links";
 import { StyledLink } from "./styled-link";
+import { Button } from "./button";
 
 export const Hero = () => {
   return (
     <Container>
-      <ContentContainer>
-        <Text variant="textStrong" color="neutral.100" m={{ t: 0 }}>
-          Hi there, I&apos;m
-        </Text>
-        <Text variant="display" as="h1" color="primary.500" m={{ b: 24 }}>
-          Ondřej Pešička
-        </Text>
+      <Text variant="h1" as="h1" color="neutral.text">
+        Ondřej Pešička
+      </Text>
 
-        <Text variant="text" m={{ b: 24 }}>
-          Product designer at{" "}
-          <StyledLink variant="primary" href="https://apify.com/" target="_blank" rel="noopener">
-            Apify
-          </StyledLink>
-          , and Co&#8209;founder of{" "}
-          <StyledLink variant="primary" href="https://atmos.style/" target="_blank" rel="noopener">
-            Atmos
-          </StyledLink>{" "}
-          helping designers create better color palettes. I also ride mountain bikes and hack Figma.{" "}
-          <Link href="/about" passHref>
-            <StyledLink variant="primary">Read more</StyledLink>
-          </Link>
-        </Text>
-        <SocialLinks />
-      </ContentContainer>
+      <Text variant="text">
+        Senior product designer at{" "}
+        <StyledLink variant="primary" href="https://apify.com/" target="_blank" rel="noopener">
+          Apify
+        </StyledLink>
+        , and designer behind{" "}
+        <StyledLink variant="primary" href="https://atmos.style/" target="_blank" rel="noopener">
+          Atmos
+        </StyledLink>{" "}
+        helping designers create better color palettes. I also ride mountain bikes and hack Figma.{" "}
+      </Text>
+
+      <ButtonWrapper>
+        <Button href="/about">About</Button>
+        <Button href="/about">Changelog</Button>
+      </ButtonWrapper>
     </Container>
   );
 };
 
-const ContentContainer = styled.div`
-  margin: auto;
-
+const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin: auto;
+  gap: 16px;
+
   ${breakpoint(
     "mobile",
     "down",
@@ -50,7 +46,7 @@ const ContentContainer = styled.div`
   )}
 `;
 
-const Container = styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
-  gap: 120px;
+  gap: 8px;
 `;
