@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Hero } from "../components/hero";
 import { Layout } from "../components/layout";
 import { Projects } from "../components/projects";
+import { Writing } from "../components/writing";
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
         <Hero />
         <Container>
           <Projects />
+          <Writing />
         </Container>
       </Layout>
     </>

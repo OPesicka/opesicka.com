@@ -14,8 +14,8 @@ export const Hero = () => {
         Senior product designer at{" "}
         <StyledLink variant="primary" href="https://apify.com/" target="_blank" rel="noopener">
           Apify
-        </StyledLink>
-        , and designer behind{" "}
+        </StyledLink>{" "}
+        and designer behind{" "}
         <StyledLink variant="primary" href="https://atmos.style/" target="_blank" rel="noopener">
           Atmos
         </StyledLink>{" "}
@@ -24,7 +24,7 @@ export const Hero = () => {
 
       <ButtonWrapper>
         <Button href="/about">About</Button>
-        <Button href="/about">Changelog</Button>
+        {/* <Button href="/about">Changelog</Button> */}
       </ButtonWrapper>
     </Container>
   );

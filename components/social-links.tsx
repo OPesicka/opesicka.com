@@ -22,14 +22,6 @@ export const SocialLinks = (props: Props) => {
             Dribbble
           </SLink>
         </li>
-        <li>
-          <SText variant={props.variant}>/</SText>
-        </li>
-        <li>
-          <SLink variant={props.variant} href="https://www.behance.net/OPesicka" rel="nofollow noopener">
-            Behance
-          </SLink>
-        </li>
       </SUl>
     </>
   );
