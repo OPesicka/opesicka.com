@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     --shadow-l1: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.15);
 
     :before {
-      opacity: 0.08;
+      opacity: 0.05;
     }
   }
 }

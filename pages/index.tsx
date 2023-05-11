@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 
-import { Hero } from "../components/hero";
+import { Hero } from "../components/home/hero";
 import { Layout } from "../components/layout";
-import { Projects } from "../components/projects";
-import { Writing } from "../components/writing";
+import { Projects } from "../components/home/projects";
+import { Writing } from "../components/home/writing";
 
 const Home: NextPage = () => {
   return (

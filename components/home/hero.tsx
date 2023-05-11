@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { breakpoint, Text } from "../theme/theme";
-import { StyledLink } from "./styled-link";
-import { Button } from "./button";
+import { breakpoint, Text } from "../../theme/theme";
+import { StyledLink } from "../styled-link";
+import { Button } from "../button";
 
 export const Hero = () => {
   return (

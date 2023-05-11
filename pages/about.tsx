@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { AboutContent } from "../components/about-content";
-import { Header } from "../components/header";
+import { AboutContent } from "../components/about/about-content";
 import { Layout } from "../components/layout";
 
 const About: NextPage = () => {
@@ -11,7 +10,7 @@ const About: NextPage = () => {
       <link rel="icon" href="/favicon.ico" />
 
       <Layout>
-        <Header />
+        {/* TODO: add some way to get back to home */}
         <AboutContent />
       </Layout>
     </>

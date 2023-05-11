@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { about } from "../res/content";
-import { Text } from "../theme/theme";
+import { aboutContent } from "./content";
+import { Text } from "../../theme/theme";
 import { AboutCards } from "./about-cards";
 
 export const AboutContent = () => {

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
-import { aboutData } from "../res/content";
-import { breakpoint, color, semanticColor, shadow, Text } from "../theme/theme";
+import { experienceContent } from "./content";
+import { breakpoint, color, semanticColor, shadow, Text } from "../../theme/theme";
 
 export const AboutCards = () => {
   return (
     <>
-      {aboutData.map((item, key) => (
+      {experienceContent.map((item, key) => (
         <Section key={item.type}>
           <Text
             variant="h3"
@@ -17,7 +17,7 @@ export const AboutCards = () => {
             {item.type}
           </Text>
 
-          {aboutData[key].data.map((item: any) => (
+          {experienceContent[key].data.map((item: any) => (
             <Item href={item.link} target="_blank" key={item.name} data-var={item.color} rel="nofollow noopener">
               <MainContainer>
                 {GetIcon(item.icon)}
@@ -42,7 +42,7 @@ export const AboutCards = () => {
 
 const GetArrow = (p: any) => {
   if (p !== null) {
-    return <Image src="/arrow.svg" width="16px" height="16px" alt="arrow right" />;
+    return <Image src="/arrow.svg" width="16" height="16" alt="arrow right" />;
   } else {
     return;
   }
@@ -50,7 +50,7 @@ const GetArrow = (p: any) => {
 
 const GetIcon = (p: any) => {
   if (p !== null) {
-    return <Image src={p} width="36px" height="36px" alt="logo" />;
+    return <Image src={p} width="36" height="36" alt="logo" />;
   } else {
     return;
   }

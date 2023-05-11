@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 import { semanticColor } from "../theme/theme";
 import { useDarkMode } from "@rbnd/react-dark-mode";
-import SwitchIcon24 from "./switch-icon-24";
+import SwitchIcon24 from "../icons/switch-icon-24";
 
 type Props = {
   href: string;

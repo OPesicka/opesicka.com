@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { semanticColor, Text } from "../theme/theme";
-import Arrow from "../icons/arrow";
+import { semanticColor, Text } from "../../theme/theme";
+import Arrow from "../../icons/arrow";
+import ArticleIcon from "../../icons/article";
+import { writingContent } from "./content";
 
 type Props = {
   title: string;
@@ -14,7 +16,7 @@ export const Writing = () => {
         WRITING
       </Text>
       <Wrapper>
-        {ProjectContent.map((item) => (
+        {writingContent.map((item) => (
           <Post key={item.title.toString()} title={item.title} description={item.description} />
         ))}
       </Wrapper>
@@ -27,6 +29,7 @@ const Post = (item: Props) => {
     <ProjectWrapper>
       <ContentWrapper>
         <TitleWrapper>
+          <ArticleIcon />
           <Text variant="h4" as="h3">
             {item.title}
           </Text>
@@ -39,17 +42,6 @@ const Post = (item: Props) => {
     </ProjectWrapper>
   );
 };
-
-const ProjectContent = [
-  {
-    title: "LCH is the best",
-    description: "Exploring the benefits of LCH for UI design.",
-  },
-  {
-    title: "Dark mode practices",
-    description: "How to go about designing the famed dark mode.",
-  },
-];
 
 const ProjectWrapper = styled.div`
   display: flex;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { semanticColor, Text } from "../theme/theme";
+import { semanticColor, Text } from "../../theme/theme";
+import { projectsContent } from "./content";
 
 type Props = {
   title: string;
@@ -13,7 +14,7 @@ export const Projects = () => {
         PROJECTS
       </Text>
       <Wrapper>
-        {ProjectContent.map((item) => (
+        {projectsContent.map((item) => (
           <Project key={item.title.toString()} title={item.title} description={item.description} />
         ))}
       </Wrapper>
@@ -36,21 +37,6 @@ const Project = (item: Props) => {
     </ProjectWrapper>
   );
 };
-
-const ProjectContent = [
-  {
-    title: "Atmos",
-    description: "Everything you need to create color palettes.",
-  },
-  {
-    title: "Fig-stats",
-    description: "Figma plugin and widget analytics.",
-  },
-  {
-    title: "RBND sutdio",
-    description: "Software studio making stuff on the internet.",
-  },
-];
 
 const ProjectWrapper = styled.div`
   display: flex;
