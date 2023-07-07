@@ -8,7 +8,7 @@ import { writingContent, type WritingProps } from './content'
 export const Writing: React.FC = () => {
   return (
     <Container>
-      <Text variant="eyebrow" as="h2" color="neutral.textSubtle">
+      <Text variant="eyebrow" component="h2" color="neutral.textSubtle">
         WRITING
       </Text>
       <Wrapper>
@@ -31,7 +31,7 @@ const Post: React.FC<WritingProps> = (item) => {
       <ContentWrapper>
         <TitleWrapper>
           <ArticleIcon />
-          <Text variant="h4" as="h3">
+          <Text variant="h4" component="h3">
             {item.title}
           </Text>
           <Arrow />

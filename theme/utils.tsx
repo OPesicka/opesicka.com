@@ -1,44 +1,45 @@
-import { css } from "styled-components";
+import { css } from 'styled-components'
 
-export type MarginOptions = {
+export interface MarginOptions {
   /** All sides */
-  all?: number;
+  all?: number
   /** Left, Right */
-  x?: number;
+  x?: number
   /** Top, Down */
-  y?: number;
+  y?: number
   /** Top */
-  t?: number;
+  t?: number
   /** Right */
-  r?: number;
+  r?: number
   /** Bottom */
-  b?: number;
+  b?: number
   /** Left */
-  l?: number;
-};
+  l?: number
+}
 
-export type PaddingOptions = {
+export interface PaddingOptions {
   /** All sides */
-  all?: number;
+  all?: number
   /** Left, Right */
-  x?: number;
+  x?: number
   /** Top, Down */
-  y?: number;
+  y?: number
   /** Top */
-  t?: number;
+  t?: number
   /** Right */
-  r?: number;
+  r?: number
   /** Bottom */
-  b?: number;
+  b?: number
   /** Left */
-  l?: number;
-};
+  l?: number
+}
 
 const px = (value?: number) => {
-  if (value !== undefined) return `${value}px`;
-};
+  if (value !== undefined) return `${value}px`
+}
 const stringOrPx = (value?: number | string) =>
-  typeof value === "number" ? `${px(value)}` : value;
+  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  typeof value === 'number' ? `${px(value)}` : value
 
 export const margin = (m?: MarginOptions) => css`
   margin: ${stringOrPx(m?.all)};
@@ -53,7 +54,7 @@ export const margin = (m?: MarginOptions) => css`
   margin-top: ${stringOrPx(m?.t)};
   margin-right: ${stringOrPx(m?.r)};
   margin-bottom: ${stringOrPx(m?.b)};
-`;
+`
 
 export const padding = (p?: PaddingOptions) => css`
   padding: ${px(p?.all)};
@@ -68,4 +69,4 @@ export const padding = (p?: PaddingOptions) => css`
   padding-top: ${px(p?.t)};
   padding-right: ${px(p?.r)};
   padding-bottom: ${px(p?.b)};
-`;
+`

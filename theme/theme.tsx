@@ -12,7 +12,7 @@ import {
 
 interface Props {
   variant: FontVariant
-  as?: string | React.ComponentType<unknown>
+  component?: keyof JSX.IntrinsicElements
   children: ReactNode
   color?: SemanticColorKey
   href?: string
@@ -20,8 +20,12 @@ interface Props {
   p?: PaddingOptions
 }
 
-export const Text: React.FC<Props> = (props) => {
-  return <SText {...props}>{props.children}</SText>
+export const Text = (props: Props) => {
+  return (
+    <SText as={props.component} {...props}>
+      {props.children}
+    </SText>
+  )
 }
 
 type FontVariant =

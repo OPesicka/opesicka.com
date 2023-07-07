@@ -1,11 +1,12 @@
-import styled, { css } from "styled-components";
-import { breakpoint, semanticColor, text, Text } from "../theme/theme";
-import { SocialLinks } from "./social-links";
+import * as React from 'react'
+import styled, { css } from 'styled-components'
+import { breakpoint, semanticColor, text, Text } from '../theme/theme'
+import { SocialLinks } from './social-links'
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <Container>
-      <Text variant="h2" as="h2">
+      <Text variant="h2" component="h2">
         Want to get in touch?
       </Text>
       <Text variant="text" color="neutral.textSubtle">
@@ -16,12 +17,12 @@ export const Footer = () => {
         <SocialLinks />
       </SBox>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   margin-top: 120px;
-`;
+`
 
 const SBox = styled.div`
   display: flex;
@@ -30,18 +31,18 @@ const SBox = styled.div`
   margin-top: 32px;
   margin-bottom: 40px;
   ${breakpoint(
-    "mobile",
-    "down",
+    'mobile',
+    'down',
     css`
       flex-direction: column;
       align-items: flex-start;
       gap: 1žpx;
     `
   )}
-`;
+`
 
 const SEmail = styled.p`
-  ${text("footnote")};
+  ${text('footnote')};
   margin: 0;
-  color: ${semanticColor("neutral.textSubtle")};
-`;
+  color: ${semanticColor('neutral.textSubtle')};
+`

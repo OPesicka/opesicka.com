@@ -1,25 +1,26 @@
-import { ReactNode } from "react";
-import styled from "styled-components";
-import { semanticColor, text } from "../theme/theme";
+import * as React from 'react'
+import { type ReactNode } from 'react'
+import styled from 'styled-components'
+import { semanticColor, text } from '../theme/theme'
 
-type Props = {
-  href: string;
-  children: ReactNode;
-  rel?: string;
-  target?: string;
-};
+interface Props {
+  href: string
+  children: ReactNode
+  rel?: string
+  target?: string
+}
 
-export const Button = (props: Props) => {
+export const Button: React.FC<Props> = (props) => {
   return (
     <SLink href={props.href} rel={props.rel} target={props.target}>
       <SButton>{props.children}</SButton>
     </SLink>
-  );
-};
+  )
+}
 
 const SButton = styled.div`
-  background: ${semanticColor("neutral.backgroundSubtle")};
-  border: 1px solid ${semanticColor("neutral.border")};
+  background: ${semanticColor('neutral.backgroundSubtle')};
+  border: 1px solid ${semanticColor('neutral.border')};
   padding: 7px 11px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -28,14 +29,14 @@ const SButton = styled.div`
   width: auto;
 
   :hover {
-    background: ${semanticColor("neutral.hover")};
+    background: ${semanticColor('neutral.hover')};
     box-shadow: var(--shadow-l1);
   }
-`;
+`
 
 const SLink = styled.a`
-  ${text("textStrong")}
-  color: ${semanticColor("neutral.text")};
+  ${text('textStrong')}
+  color: ${semanticColor('neutral.text')};
   text-decoration: none;
   line-height: 24px;
-`;
+`

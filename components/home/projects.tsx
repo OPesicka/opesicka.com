@@ -6,7 +6,7 @@ import { type ProjectProps, projectsContent } from './content'
 export const Projects: React.FC = () => {
   return (
     <Container>
-      <Text variant="eyebrow" as="h2" color="neutral.textSubtle">
+      <Text variant="eyebrow" component="h2" color="neutral.textSubtle">
         PROJECTS
       </Text>
       <Wrapper>
@@ -29,7 +29,7 @@ const Project: React.FC<ProjectProps> = (item) => {
     <ProjectWrapper href={item.link} target="_blank" rel="noopener">
       <ProjectImage>{item.illustration}</ProjectImage>
       <ContentWrapper>
-        <Text variant="h4" as="h3">
+        <Text variant="h4" component="h3">
           {item.title}
         </Text>
         <Text variant="footnote" color="neutral.textSubtle">

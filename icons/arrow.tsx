@@ -1,7 +1,13 @@
-import * as React from "react";
-import { SVGProps } from "react";
-const Arrow = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="none" {...props}>
+import * as React from 'react'
+import { type SVGProps } from 'react'
+const Arrow: React.FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
+    fill="none"
+    {...props}
+  >
     <path
       fill="#938EA1"
       fillRule="evenodd"
@@ -9,5 +15,5 @@ const Arrow = (props: SVGProps<SVGSVGElement>) => (
       clipRule="evenodd"
     />
   </svg>
-);
-export default Arrow;
+)
+export default Arrow

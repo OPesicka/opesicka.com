@@ -1,7 +1,8 @@
-import { NextPage } from "next";
-import { NextSeo } from "next-seo";
-import { AboutContent } from "../components/about/about-content";
-import { Layout } from "../components/layout";
+import * as React from 'react'
+import { type NextPage } from 'next'
+import { NextSeo } from 'next-seo'
+import { AboutContent } from '../components/about/about-content'
+import { Layout } from '../components/layout'
 
 const About: NextPage = () => {
   return (
@@ -14,7 +15,7 @@ const About: NextPage = () => {
         <AboutContent />
       </Layout>
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About
