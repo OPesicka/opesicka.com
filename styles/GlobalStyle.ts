@@ -46,6 +46,9 @@ export const GlobalStyle = createGlobalStyle`
     --color-neutral-background-subtle: ${color("neutral.50")};
     --color-neutral-border: ${color("neutral.150")};
     --color-neutral-hover: ${color("neutral.0")};
+    --color-neutral-illustration: ${color("neutral.600")};
+    --color-neutral-illustration-subtle: ${color("neutral.500")};
+    --color-primary-text: ${color("primary.600")};
 
     --shadow-l1: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.15);
 
@@ -66,6 +69,9 @@ export const GlobalStyle = createGlobalStyle`
     --color-neutral-background-subtle: ${color("neutral.800")};
     --color-neutral-border: ${color("neutral.700")};
     --color-neutral-hover: ${color("neutral.750")};
+    --color-neutral-illustration: ${color("neutral.0")};
+    --color-neutral-illustration-subtle: ${color("neutral.50")};
+    --color-primary-text: ${color("primary.400")};
 
     --shadow-l1: 0px 1px 3px rgba(0, 0, 0, 0.9), 0px 0px 1px rgba(0, 0, 0, 1);
 
