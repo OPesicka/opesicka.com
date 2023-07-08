@@ -1,39 +1,57 @@
-import { ReactNode } from "react";
-import styled from "styled-components";
-import { color, text } from "../theme/theme";
+import * as React from 'react'
+import { type ReactNode } from 'react'
+import styled from 'styled-components'
+import { semanticColor, text } from '../theme/theme'
+import Link from 'next/link'
 
-type Props = {
-  href: string;
-  children: ReactNode;
-  rel?: string;
-  target?: string;
-};
+interface Props {
+  href: string
+  children: ReactNode
+  rel?: string
+  target?: string
+}
 
-export const Button = (props: Props) => {
-  return (
-    <SLink href={props.href} rel={props.rel} target={props.target}>
-      <SButton>{props.children}</SButton>
-    </SLink>
-  );
-};
+export const Button: React.FC<Props> = (props) => {
+  if (props.target === '_blank') {
+    return (
+      <SLink href={props.href} rel={props.rel} target={props.target}>
+        <SButton>{props.children}</SButton>
+      </SLink>
+    )
+  } else {
+    return (
+      <SButtonLink href={props.href} passHref>
+        <SButton>{props.children}</SButton>
+      </SButtonLink>
+    )
+  }
+}
 
 const SButton = styled.div`
-  background: ${color("primary.600")};
-  padding: 8px 16px;
+  background: ${semanticColor('neutral.backgroundSubtle')};
+  border: 1px solid ${semanticColor('neutral.border')};
+  padding: 7px 11px;
+  box-sizing: border-box;
   border-radius: 8px;
-  border: none;
-  transition: 160ms;
+  transition: all 160ms;
   cursor: pointer;
   width: auto;
 
   :hover {
-    background: ${color("primary.500")};
+    background: ${semanticColor('neutral.hover')};
+    box-shadow: var(--shadow-l1);
   }
-`;
+`
 
 const SLink = styled.a`
-  ${text("footnoteStrong")}
-  color: ${color("neutral.50")};
+  ${text('textStrong')}
+  color: ${semanticColor('neutral.text')};
   text-decoration: none;
-  margin-top: 24px;
-`;
+  line-height: 24px;
+`
+const SButtonLink = styled(Link)`
+  ${text('textStrong')}
+  color: ${semanticColor('neutral.text')};
+  text-decoration: none;
+  line-height: 24px;
+`

@@ -1,59 +1,60 @@
-import styled from "styled-components";
-import { color, text } from "../theme/theme";
+import * as React from 'react'
+import styled from 'styled-components'
+import { Text, semanticColor, text } from '../theme/theme'
+import { links } from '../content/links'
 
-type Props = {
-  variant?: "white";
-};
+interface Props {
+  variant?: 'white'
+}
 
-export const SocialLinks = (props: Props) => {
+export const SocialLinks: React.FC<Props> = (props) => {
   return (
     <>
       <SUl>
         <li>
-          <SLink variant={props.variant} href="https://www.linkedin.com/in/opesicka/" rel="nofollow noopener">
+          <SLink href={links.linkedIn} rel="nofollow noopener">
             Linkedin
           </SLink>
         </li>
         <li>
-          <SText variant={props.variant}>/</SText>
+          <Text variant="footnote" color="neutral.textSubtle">
+            /
+          </Text>
         </li>
         <li>
-          <SLink variant={props.variant} href="https://dribbble.com/OPesicka" rel="nofollow noopener">
-            Dribbble
+          <SLink href={links.github} rel="nofollow noopener">
+            Github
           </SLink>
         </li>
         <li>
-          <SText variant={props.variant}>/</SText>
+          <Text variant="footnote" color="neutral.textSubtle">
+            /
+          </Text>
         </li>
         <li>
-          <SLink variant={props.variant} href="https://www.behance.net/OPesicka" rel="nofollow noopener">
-            Behance
+          <SLink href={links.twitter} rel="nofollow noopener">
+            Twitter
           </SLink>
         </li>
       </SUl>
     </>
-  );
-};
+  )
+}
 
-const SLink = styled.a<Props>`
-  ${text("footnote")};
-  color: ${(props) => color(props.variant === "white" ? "neutral.50" : "neutral.400")};
+const SLink = styled.a`
+  ${text('footnote')};
+  color: ${semanticColor('neutral.text')};
   text-decoration: none;
   transition: all 160ms;
   :hover {
-    color: ${(props) => color(props.variant === "white" ? "neutral.200" : "primary.500")};
+    color: ${semanticColor('neutral.textSubtle')};
+    text-decoration: underline;
   }
-`;
+`
 
 const SUl = styled.ul`
   display: flex;
   gap: 24px;
   list-style-type: none;
   padding: 0;
-`;
-
-const SText = styled.p<Props>`
-  ${text("footnote")};
-  color: ${(props) => color(props.variant === "white" ? "neutral.300" : "primary.400")};
-  margin: 0;
-`;
+`

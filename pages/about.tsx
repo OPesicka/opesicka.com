@@ -1,8 +1,8 @@
-import { NextPage } from "next";
-import { NextSeo } from "next-seo";
-import { AboutContent } from "../components/about-content";
-import { Header } from "../components/header";
-import { Layout } from "../components/layout";
+import * as React from 'react'
+import { type NextPage } from 'next'
+import { NextSeo } from 'next-seo'
+import { Summary } from '../components/about/summary'
+import { AboutCards } from '../components/about/about-cards'
 
 const About: NextPage = () => {
   return (
@@ -10,12 +10,10 @@ const About: NextPage = () => {
       <NextSeo title="About | Ondřej Pešička" />
       <link rel="icon" href="/favicon.ico" />
 
-      <Layout>
-        <Header />
-        <AboutContent />
-      </Layout>
+      <Summary />
+      <AboutCards />
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About
