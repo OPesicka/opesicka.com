@@ -63,12 +63,12 @@ const HeadingWrapper = styled.div`
   gap: 8px;
   margin-bottom: 24px;
   margin-left: -24px;
-  margin-top: 40px;
 
   ${breakpoint(
     'mobile',
     'down',
     css`
+      margin-top: 40px;
       margin-left: -16px;
     `
   )}
