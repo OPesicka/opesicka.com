@@ -3,7 +3,7 @@ import { DefaultSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
 import { Fragment } from 'react'
-import { GlobalStyle } from '../styles/GlobalStyle'
+import { GlobalStyle } from '../theme/GlobalStyle'
 import { DarkModeProvider } from '@rbnd/react-dark-mode'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

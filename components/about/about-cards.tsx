@@ -1,132 +1,86 @@
 import * as React from 'react'
-import Image from 'next/image'
 import styled, { css } from 'styled-components'
-import { experienceContent } from './content'
-import {
-  breakpoint,
-  color,
-  semanticColor,
-  shadow,
-  Text
-} from '../../theme/theme'
+import { breakpoint, semanticColor, Text } from '../../theme/theme'
+import { experienceContent } from '../../content/about-content'
+import Arrow from '../../public/icons/arrow'
 
 export const AboutCards: React.FC = () => {
   return (
     <>
       {experienceContent.map((item, key) => (
         <Section key={item.type}>
-          <Text
-            variant="h3"
-            // color={item.color}
-            component="h2"
-            p={{ all: 24 }}
-          >
+          <Text variant="eyebrow" component="h2" color="neutral.textSubtle">
             {item.type}
           </Text>
 
-          {experienceContent[key].data.map((item: any) => (
-            <Item
-              href={item.link}
-              target="_blank"
-              key={item.name}
-              data-var={item.color}
-              rel="nofollow noopener"
-            >
-              <MainContainer>
-                {GetIcon(item.icon)}
-                <TextContainer>
-                  <HeadingContainer>
-                    <Text variant="h4" component="h3">
-                      {item.name}
-                    </Text>
-                    {GetArrow(item.link)}
-                  </HeadingContainer>
-                  <Text variant="footnote">{item.description}</Text>
-                </TextContainer>
-              </MainContainer>
-              {GetSpacing(item.icon, item.date)}
-            </Item>
-          ))}
+          <ItemsWrapper>
+            {experienceContent[key].data.map((item: any) => (
+              <Item key={item.name}>
+                <MainContainer>
+                  {item.link ? (
+                    <LinktContainer
+                      href={item.link}
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <HeadingContainer>
+                        <Text variant="h4" component="h3">
+                          {item.name}
+                        </Text>
+                        <Arrow />
+                      </HeadingContainer>
+                      <Text variant="footnote" color="neutral.textSubtle">
+                        {item.description}
+                      </Text>
+                    </LinktContainer>
+                  ) : (
+                    <TextContainer>
+                      <HeadingContainer>
+                        <Text variant="h4" component="h3">
+                          {item.name}
+                        </Text>
+                      </HeadingContainer>
+                      <Text variant="footnote" color="neutral.textSubtle">
+                        {item.description}
+                      </Text>
+                    </TextContainer>
+                  )}
+                </MainContainer>
+                <Text variant="footnote">{item.date}</Text>
+              </Item>
+            ))}
+          </ItemsWrapper>
         </Section>
       ))}
     </>
   )
 }
 
-const GetArrow: any = (p: string) => {
-  if (p !== null) {
-    return <Image src="/arrow.svg" width="16" height="16" alt="arrow right" />
-  }
-}
-
-const GetIcon: any = (p: string) => {
-  if (p !== null) {
-    return <Image src={p} width="36" height="36" alt="logo" />
-  }
-}
-
-const GetSpacing: any = (p: string, date: string) => {
-  if (p !== null) {
-    return (
-      <DateContainer>
-        <Text variant="footnote">{date}</Text>
-      </DateContainer>
-    )
-  } else {
-    return <Text variant="footnote">{date}</Text>
-  }
-}
 const HeadingContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 8px;
 `
 const Section = styled.div`
   margin-top: 80px;
   margin-bottom: 80px;
-  background: linear-gradient(
-    163.1deg,
-    ${semanticColor('neutral.backgroundSubtle')} -74.91%,
-    ${semanticColor('neutral.background')} 92.81%
-  );
-  border: 1px solid ${color('neutral.800')};
-  border-radius: 16px;
-  overflow: hidden;
-  ${shadow('l2')};
-  ${breakpoint(
-    'mobile',
-    'down',
-    css`
-      margin-top: 40px;
-      margin-bottom: 40px;
-    `
-  )}
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `
-const Item = styled.a`
+
+const ItemsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`
+
+const Item = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
-  border-top: 1px solid ${color('neutral.800')};
-  border-bottom: none;
-  color: ${color('neutral.50')};
-  text-decoration: none;
-  transition: 120ms;
-  &[data-var='primary']:hover {
-    background-color: ${semanticColor('neutral.backgroundSubtle')};
-    cursor: pointer;
-    /* color: ${color('primary.400')}; */
-  }
-  &[data-var='success']:hover {
-    /* color: ${color('success.400')}; */
-    background-color: ${semanticColor('neutral.backgroundSubtle')};
-    cursor: pointer;
-  }
-  &[data-var='danger']:hover {
-    /* color: ${color('danger.400')}; */
-    background-color: ${semanticColor('neutral.backgroundSubtle')};
-    cursor: pointer;
-  }
+
   ${breakpoint(
     'mobile',
     'down',
@@ -136,23 +90,30 @@ const Item = styled.a`
     `
   )}
 `
-const DateContainer = styled.div`
-  ${breakpoint(
-    'mobile',
-    'down',
-    css`
-      margin-left: 60px;
-    `
-  )}
+
+const LinktContainer = styled.a`
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  text-decoration: none;
+  transition: all 120ms;
+
+  :hover {
+    h3 {
+      color: ${semanticColor('primary.text')};
+    }
+  }
+`
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 `
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 400px;
-`
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
+  text-decoration: none;
+  transition: all 120ms;
 `

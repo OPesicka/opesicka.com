@@ -12,22 +12,12 @@ export const Hero: React.FC = () => {
       </Text>
 
       <Text variant="text">
-        Senior product designer at{' '}
-        <StyledLink
-          variant="primary"
-          href="https://apify.com/"
-          target="_blank"
-          rel="noopener"
-        >
+        Staff product designer at{' '}
+        <StyledLink href="https://apify.com/" target="_blank" rel="noopener">
           Apify
         </StyledLink>{' '}
         and designer behind{' '}
-        <StyledLink
-          variant="primary"
-          href="https://atmos.style/"
-          target="_blank"
-          rel="noopener"
-        >
+        <StyledLink href="https://atmos.style/" target="_blank" rel="noopener">
           Atmos
         </StyledLink>{' '}
         helping designers create better color palettes. I also ride mountain
@@ -36,7 +26,6 @@ export const Hero: React.FC = () => {
 
       <ButtonWrapper>
         <Button href="/about">About</Button>
-        {/* <Button href="/about">Changelog</Button> */}
       </ButtonWrapper>
     </Container>
   )

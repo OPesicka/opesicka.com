@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { AtmosIllustration } from '../../illustrations/atmos'
-import { FigStatsIllustration } from '../../illustrations/figstats'
-import { RbndIllustration } from '../../illustrations/rbnd'
+import { AtmosIllustration } from '../public/illustrations/atmos'
+import { FigStatsIllustration } from '../public/illustrations/figstats'
+import { RbndIllustration } from '../public/illustrations/rbnd'
 
 export interface WritingProps {
   title: string

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { semanticColor, text } from '../theme/theme'
+import { Text, semanticColor, text } from '../theme/theme'
+import { links } from '../content/links'
 
 interface Props {
   variant?: 'white'
@@ -11,24 +12,28 @@ export const SocialLinks: React.FC<Props> = (props) => {
     <>
       <SUl>
         <li>
-          <SLink
-            variant={props.variant}
-            href="https://www.linkedin.com/in/opesicka/"
-            rel="nofollow noopener"
-          >
+          <SLink href={links.linkedIn} rel="nofollow noopener">
             Linkedin
           </SLink>
         </li>
         <li>
-          <SText variant={props.variant}>/</SText>
+          <Text variant="footnote" color="neutral.textSubtle">
+            /
+          </Text>
         </li>
         <li>
-          <SLink
-            variant={props.variant}
-            href="https://dribbble.com/OPesicka"
-            rel="nofollow noopener"
-          >
-            Dribbble
+          <SLink href={links.github} rel="nofollow noopener">
+            Github
+          </SLink>
+        </li>
+        <li>
+          <Text variant="footnote" color="neutral.textSubtle">
+            /
+          </Text>
+        </li>
+        <li>
+          <SLink href={links.twitter} rel="nofollow noopener">
+            Twitter
           </SLink>
         </li>
       </SUl>
@@ -36,7 +41,7 @@ export const SocialLinks: React.FC<Props> = (props) => {
   )
 }
 
-const SLink = styled.a<Props>`
+const SLink = styled.a`
   ${text('footnote')};
   color: ${semanticColor('neutral.text')};
   text-decoration: none;
@@ -52,10 +57,4 @@ const SUl = styled.ul`
   gap: 24px;
   list-style-type: none;
   padding: 0;
-`
-
-const SText = styled.p<Props>`
-  ${text('footnote')};
-  color: ${semanticColor('neutral.textSubtle')};
-  margin: 0;
 `

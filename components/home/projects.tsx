@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { semanticColor, Text } from '../../theme/theme'
-import { type ProjectProps, projectsContent } from './content'
+import { type ProjectProps, projectsContent } from '../../content/home-content'
 
 export const Projects: React.FC = () => {
   return (
@@ -48,6 +48,7 @@ const ProjectImage = styled.div`
   border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 187 / 120;
+  transition: all 120ms;
 
   svg {
     width: 100%;
@@ -75,6 +76,9 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  h3 {
+    transition: all 120ms;
+  }
 `
 
 const ProjectWrapper = styled.a`
@@ -85,6 +89,9 @@ const ProjectWrapper = styled.a`
   text-decoration: none;
 
   &:hover {
+    ${ProjectImage} {
+      box-shadow: var(--shadow-l2);
+    }
     ${ContentWrapper} {
       h3 {
         color: ${semanticColor('primary.text')};

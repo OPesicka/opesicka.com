@@ -1,9 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { semanticColor, Text } from '../../theme/theme'
-import Arrow from '../../icons/arrow'
-import ArticleIcon from '../../icons/article'
-import { writingContent, type WritingProps } from './content'
+import Arrow from '../../public/icons/arrow'
+import ArticleIcon from '../../public/icons/article'
+import { writingContent, type WritingProps } from '../../content/home-content'
 
 export const Writing: React.FC = () => {
   return (
@@ -46,6 +46,7 @@ const Post: React.FC<WritingProps> = (item) => {
 
 const Wrapper = styled.div`
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   gap: 40px;
 `
@@ -58,20 +59,27 @@ const Container = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   gap: 4px;
 `
 
 const TitleWrapper = styled.div`
   display: flex;
+  align-items: flex-start;
   flex-direction: row;
   gap: 8px;
   align-items: center;
+
+  h3 {
+    transition: all 120ms;
+  }
 `
 
 const ProjectWrapper = styled.a`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
   text-decoration: none;
 

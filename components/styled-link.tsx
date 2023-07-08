@@ -6,7 +6,6 @@ import { semanticColor, text } from '../theme/theme'
 interface Props {
   href?: string
   children: ReactNode
-  variant?: 'white' | 'primary'
   rel?: string
   target?: string
 }
@@ -21,6 +20,6 @@ const SLink = styled.a<Props>`
   text-decoration: underline;
   transition: all 160ms;
   :hover {
-    color: ${semanticColor('neutral.textSubtle')};
+    color: ${semanticColor('primary.text')};
   }
 `

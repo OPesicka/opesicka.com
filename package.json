@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --dir components --dir icons --dir illustrations --dir pages --dir public --dir styles --dir theme --dir types"
+    "lint": "next lint --dir components --dir pages --dir public --dir theme --dir types --dir content"
   },
   "dependencies": {
     "@rbnd/react-dark-mode": "^1.0.4",

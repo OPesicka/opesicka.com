@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { semanticColor } from '../theme/theme'
 import { useDarkMode } from '@rbnd/react-dark-mode'
-import SwitchIcon24 from '../icons/switch-icon-24'
+import SwitchIcon24 from '../public/icons/switch-icon-24'
 
 export const ModeSwitch: React.FC = () => {
   const { mode, setMode } = useDarkMode()
