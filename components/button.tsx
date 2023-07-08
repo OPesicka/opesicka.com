@@ -2,6 +2,7 @@ import * as React from 'react'
 import { type ReactNode } from 'react'
 import styled from 'styled-components'
 import { semanticColor, text } from '../theme/theme'
+import Link from 'next/link'
 
 interface Props {
   href: string
@@ -11,11 +12,19 @@ interface Props {
 }
 
 export const Button: React.FC<Props> = (props) => {
-  return (
-    <SLink href={props.href} rel={props.rel} target={props.target}>
-      <SButton>{props.children}</SButton>
-    </SLink>
-  )
+  if (props.target === '_blank') {
+    return (
+      <SLink href={props.href} rel={props.rel} target={props.target}>
+        <SButton>{props.children}</SButton>
+      </SLink>
+    )
+  } else {
+    return (
+      <SButtonLink href={props.href} passHref>
+        <SButton>{props.children}</SButton>
+      </SButtonLink>
+    )
+  }
 }
 
 const SButton = styled.div`
@@ -35,6 +44,12 @@ const SButton = styled.div`
 `
 
 const SLink = styled.a`
+  ${text('textStrong')}
+  color: ${semanticColor('neutral.text')};
+  text-decoration: none;
+  line-height: 24px;
+`
+const SButtonLink = styled(Link)`
   ${text('textStrong')}
   color: ${semanticColor('neutral.text')};
   text-decoration: none;
