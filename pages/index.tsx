@@ -3,7 +3,6 @@ import type { NextPage } from 'next'
 import styled from 'styled-components'
 
 import { Hero } from '../components/home/hero'
-import { Layout } from '../components/layout'
 import { Projects } from '../components/home/projects'
 import { Writing } from '../components/home/writing'
 
@@ -12,13 +11,11 @@ const Home: NextPage = () => {
     <>
       <link rel="icon" href="/favicon.ico" />
 
-      <Layout>
-        <Hero />
-        <Container>
-          <Projects />
-          <Writing />
-        </Container>
-      </Layout>
+      <Hero />
+      <Container>
+        <Projects />
+        <Writing />
+      </Container>
     </>
   )
 }

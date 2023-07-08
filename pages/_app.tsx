@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { Fragment } from 'react'
 import { GlobalStyle } from '../theme/GlobalStyle'
 import { DarkModeProvider } from '@rbnd/react-dark-mode'
+import { Layout } from '../components/layout'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -31,16 +32,16 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
             }
           ]}
         />
-
         <Script
           strategy="afterInteractive"
           data-domain="opesicka.com"
           src="https://plausible.io/js/plausible.js"
         />
         <Script strategy="beforeInteractive" src="/noflash.min.js" />
-
         <GlobalStyle />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Fragment>
     </DarkModeProvider>
   )

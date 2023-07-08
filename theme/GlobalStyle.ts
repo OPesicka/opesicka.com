@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { color } from './theme'
+import { color, text } from './theme'
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -102,6 +102,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
+  ${text('text')};
   overflow-x: hidden;
   margin: 0;
   :before {
@@ -113,6 +114,18 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+  }
+
+  h1 {
+    ${text('h1')};
+  }
+
+  h2 {
+    ${text('h2')};
+  }
+
+  h3 {
+    ${text('h3')};
   }
 }
 

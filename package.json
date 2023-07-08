@@ -8,6 +8,9 @@
     "lint": "next lint --dir components --dir pages --dir public --dir theme --dir types --dir content"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.4.9",
     "@rbnd/react-dark-mode": "^1.0.4",
     "next": "^13.4.1",
     "next-seo": "^6.0.0",
