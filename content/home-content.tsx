@@ -2,6 +2,7 @@ import * as React from 'react'
 import { AtmosIllustration } from '../public/illustrations/atmos'
 import { FigStatsIllustration } from '../public/illustrations/figstats'
 import { RbndIllustration } from '../public/illustrations/rbnd'
+import { FlowsIllustration } from '../public/illustrations/flows'
 
 export interface WritingProps {
   title: string
@@ -40,6 +41,12 @@ export const projectsContent: ProjectProps[] = [
     description: 'Everything you need to create color palettes.',
     illustration: <AtmosIllustration />,
     link: 'https://atmos.style'
+  },
+  {
+    title: 'Flows',
+    description: 'Onboarding platform for modern SaaS',
+    illustration: <FlowsIllustration />,
+    link: 'https://flows.sh/'
   },
   {
     title: 'Fig-stats',
