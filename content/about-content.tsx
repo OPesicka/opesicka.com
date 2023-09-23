@@ -48,6 +48,12 @@ export const experienceContent = [
     type: 'Projects',
     data: [
       {
+        name: 'Flows',
+        description: 'Onboarding platform for modern SaaS',
+        date: 'September 2023 - Current',
+        link: 'https://flows.sh/'
+      },
+      {
         name: 'rbnd studio',
         description: 'Design & Development studio',
         date: 'May 2022 - Current',

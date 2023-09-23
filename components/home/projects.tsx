@@ -59,6 +59,8 @@ const ProjectImage = styled.div`
 const Wrapper = styled.div`
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
+  row-gap: 32px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -87,6 +89,7 @@ const ProjectWrapper = styled.a`
   gap: 12px;
   width: 100%;
   text-decoration: none;
+  max-width: 186px;
 
   &:hover {
     ${ProjectImage} {
@@ -97,5 +100,9 @@ const ProjectWrapper = styled.a`
         color: ${semanticColor('primary.text')};
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    max-width: unset;
   }
 `
