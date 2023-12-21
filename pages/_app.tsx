@@ -6,6 +6,7 @@ import { Fragment } from 'react'
 import { GlobalStyle } from '../theme/GlobalStyle'
 import { DarkModeProvider } from '@rbnd/react-dark-mode'
 import { Layout } from '../components/layout'
+import { CloudFlows } from '../components/cloud-flows'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         />
         <Script strategy="beforeInteractive" src="/noflash.min.js" />
         <GlobalStyle />
+        <CloudFlows />
         <Layout>
           <Component {...pageProps} />
         </Layout>
