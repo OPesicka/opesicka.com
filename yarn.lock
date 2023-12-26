@@ -403,10 +403,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@rbnd/flows@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@rbnd/flows/-/flows-0.0.24.tgz#437d7c720d20e147d92c4f525ec843f919d4a28c"
-  integrity sha512-L1cUyxnxMS3vDw3Um4LeBE5yNrooN25rRpeck5mpeq/wLa0eoInun1JuZkE4xXyL59Lqgjdj/sLB0GsyU4pgFw==
+"@rbnd/flows@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@rbnd/flows/-/flows-0.0.25.tgz#58db9a43f18026e8f333e82123b5d254f86c6709"
+  integrity sha512-Bj7fuEbeggnBl258ncwvZPjBOKuI3HWB6dC4NsEVGdwsVdCPmfzTKnvXD4UOGHRW3kXtkBRRtzNvW4IGBk3uxw==
   dependencies:
     "@floating-ui/dom" "^1.5.3"
     superstruct "^1.0.3"
