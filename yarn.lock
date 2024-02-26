@@ -216,10 +216,10 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.1.tgz#16308cea045f0fc777b6ff20a9f25474dd8293d2"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
-"@flows/js@0.0.39":
-  version "0.0.39"
-  resolved "https://registry.yarnpkg.com/@flows/js/-/js-0.0.39.tgz#2c15b0870322aedd7afea0b1ca0011b3bfe0d08d"
-  integrity sha512-YkWj0tK790N45DAOKk6JI9WeqsyRZTCKyHFl9zR9/68C4L7M48w3vEWPtotSjmjMoAsWi5rFExvv8rB2Lje5hg==
+"@flows/js@0.0.40":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@flows/js/-/js-0.0.40.tgz#b4cd75b47909c4e2bcb67521692f6b54638436a9"
+  integrity sha512-dSgUrCBwonOh+xCJgQd0QFodBhudWzLg7KXsmSEHPBGXzJ7+ZQ+UNeBEpTpS8QbNehP6cHfM6BI6r/ff2JE6fw==
   dependencies:
     "@floating-ui/dom" "^1.6.3"
     superstruct "^1.0.3"
