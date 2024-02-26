@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import '@rbnd/flows/flows.css'
-import { init } from '@rbnd/flows/cloud'
+import { init } from '@flows/js'
 
 export const CloudFlows = () => {
   const firstRender = useFirstRender()
