@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light-mode {
+  background-color: #f2f2f2;
+  color: #1c1c1c;
+
+  --color-neutral-text: #1c1c1c;
+  --color-neutral-text-subtle: #3e3e3e;
+  --color-neutral-background: #fff;
+  --color-neutral-background-subtle: #f2f2f2;
+  --color-neutral-border: #d9d9d9;
+  --color-neutral-hover: #fff;
+  --color-neutral-illustration: #4c4c4c;
+  --color-neutral-illustration-subtle: #808080;
+  --color-primary-text: #374cee;
+
+  --shadow-color: 0deg 0% 59%;
+
+  --shadow-l1: 0.3px 0.5px 0.4px hsl(var(--shadow-color) / 0.48),
+    0.4px 0.8px 0.7px -1.7px hsl(var(--shadow-color) / 0.36),
+    1.4px 2.8px 2.3px -3.3px hsl(var(--shadow-color) / 0.24),
+    4.2px 8.4px 7px -5px hsl(var(--shadow-color) / 0.12);
+
+  --shadow-l2: 0.3px 0.5px 0.4px hsl(var(--shadow-color) / 0.72),
+    0.4px 0.9px 0.7px -1.7px hsl(var(--shadow-color) / 0.54),
+    1.7px 3.3px 2.8px -3.3px hsl(var(--shadow-color) / 0.36),
+    5px 10px 8.4px -5px hsl(var(--shadow-color) / 0.18);
+}
+
+.dark-mode {
+  background-color: #1c1c1c;
+  color: #e5e5e5;
+  color-scheme: dark;
+
+  --color-neutral-text: #e5e5e5;
+  --color-neutral-text-subtle: #9c9c9c;
+  --color-neutral-background: #1c1c1c;
+  --color-neutral-background-subtle: #232323;
+  --color-neutral-border: #3e3e3e;
+  --color-neutral-hover: #2a2a2a;
+  --color-neutral-illustration: #fff;
+  --color-neutral-illustration-subtle: #f2f2f2;
+  --color-primary-text: #8088f6;
+
+  --shadow-color: 0deg 0% 4%;
+
+  --shadow-l1: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+
+  --shadow-l2: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.18),
+    1.2px 2.3px 3.5px -0.3px hsl(var(--shadow-color) / 0.32),
+    2.6px 5.1px 7.7px -0.7px hsl(var(--shadow-color) / 0.45),
+    5.6px 11.3px 17px -1px hsl(var(--shadow-color) / 0.59);
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  overflow-x: hidden;
+  box-sizing: content-box;
+}
+
+body::before {
+  background-image: url(/noise.png);
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.light-mode body::before {
+  opacity: 0.05;
+}
+
+.dark-mode body::before {
+  opacity: 0.25;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
