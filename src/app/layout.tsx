@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <script src="/noflash.min.js" defer data-nscript="beforeInteractive" />
       </head>
-      <body className={`${inter.className} m-auto max-w-[640px] px-16 pb-0 pt-16`}>
+      <body className={`${inter.className} m-auto max-w-[580px] px-8 pb-0 pt-10 md:px-16 md:pt-16`}>
         <Providers>
           {children}
           <Footer />

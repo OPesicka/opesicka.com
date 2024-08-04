@@ -33,7 +33,7 @@ export const ProjectList: FC = () => {
       <h2 className="mb-4 text-sm font-semibold uppercase text-neutral-700 dark:text-neutral-400">
         Projects
       </h2>
-      <ul className="flex gap-8">
+      <ul className="flex flex-col gap-8 sm:flex-row">
         {projectsContent.map((project) => (
           <Project key={project.title} {...project} />
         ))}
