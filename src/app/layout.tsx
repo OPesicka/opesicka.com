@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="/noflash.min.js" defer data-nscript="beforeInteractive" />
+        <Script src="/noflash.min.js" strategy="beforeInteractive" />
         <Script
           strategy="afterInteractive"
           data-domain="opesicka.com"
