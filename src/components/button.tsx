@@ -1,5 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
-import { FC } from "react";
+import React, { FC } from "react";
 
 type Props = {
   children: React.ReactNode;

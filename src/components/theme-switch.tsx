@@ -3,7 +3,7 @@
 import { useFirstRender } from "@/hooks";
 import type { Mode } from "@rbnd/react-dark-mode";
 import { useDarkMode } from "@rbnd/react-dark-mode";
-import { type FC, useId } from "react";
+import React, { type FC, useId } from "react";
 
 const options: {
   value: Mode;
@@ -34,7 +34,7 @@ export const ThemeSwitch: FC = () => {
         Theme switch
       </label>
       <select
-        className={`${sharedStyles} dark:hover:bg-neutral-750 hover:shadow-l1 focus:shadow-l1 px-1 py-1 text-sm font-semibold leading-6 transition-all hover:bg-white focus:border-blue-500 focus:outline-none`}
+        className={`${sharedStyles} px-1 py-1 text-sm font-semibold leading-6 transition-all hover:bg-white hover:shadow-l1 focus:border-blue-500 focus:shadow-l1 focus:outline-none dark:hover:bg-neutral-750`}
         id={id}
         onChange={handleModeChange}
         value={mode}

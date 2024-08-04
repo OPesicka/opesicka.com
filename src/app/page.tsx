@@ -1,4 +1,4 @@
-import { Hero, ProjectList, ThemeSwitch, WritingList } from "@/components";
+import { Hero, ProjectList, WritingList } from "@/components";
 
 export default function Home() {
   return (

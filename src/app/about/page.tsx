@@ -1,8 +1,7 @@
-import { Button } from "@/components";
-import { links, socials } from "@/consts";
-import Link from "next/link";
+import { links } from "@/consts";
 import { AboutHero } from "./hero";
 import { ListItem } from "@/components/list-item";
+import { Metadata } from "next";
 
 const experience = [
   {
@@ -58,6 +57,26 @@ const eductaion = [
     rel: "noopener noreferrer",
   },
 ];
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://opesicka.com"),
+  title: "About – Ondřej Pešička",
+  description: "Designer and (sometimes) software engineer, currently building at RBND.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    title: "About – Ondřej Pešička",
+    images: "/og/about.png",
+  },
+  twitter: {
+    creator: "@opesicka",
+    card: "summary_large_image",
+    description: "Designer and (sometimes) software engineer, currently building at RBND.",
+    title: "About – Ondřej Pešička",
+    images: "/og/about.png",
+  },
+};
 
 export default function About() {
   return (

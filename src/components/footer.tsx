@@ -1,4 +1,4 @@
-import { email, links, socials } from "@/consts";
+import { socials } from "@/consts";
 import { FC, Fragment } from "react";
 import { ThemeSwitch } from "./theme-switch";
 
