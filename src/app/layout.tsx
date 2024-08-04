@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Providers } from "@/components";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script src="/noflash.min.js" defer data-nscript="beforeInteractive" />
+        <Script
+          strategy="afterInteractive"
+          data-domain="opesicka.com"
+          src="https://plausible.io/js/plausible.js"
+        />
       </head>
       <body className={`${inter.className} m-auto max-w-[580px] px-8 pb-0 pt-10 md:px-16 md:pt-16`}>
         <Providers>
