@@ -7,7 +7,7 @@ const experience = [
   {
     company: "RBND",
     role: "Co-founder",
-    duration: "2024 – Current",
+    duration: "March 2024 – Current",
     link: links.rbnd,
     rel: "noopener",
   },
